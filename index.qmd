@@ -1,0 +1,34 @@
+---
+title: "STA 492 2.0/ ASP 454 2.0 Data Visualisation"
+---
+
+## Lecturer-in-charge:
+
+Dr Thiyanga S. Talagala
+
+## Email:
+
+ttatalagala\@sjp.ac.lk
+
+## Course outline:
+
+Available on LMS
+
+## Policies and regulations:
+
+To access important information regarding the unit, please go to the course Learning Management System (LMS) page. [Click here](https://lms.fas.sjp.ac.lk/enrol/index.php?id=689) to go directly to the LMS. 
+
+## Weekly Schedule:
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)
+wkno <- c(1)
+date <- c("April 30, 2024")
+Topic <- c("[Introduction to Data Viualisation](./week1/index.html)")
+reading <- c("")
+exercise <- c("")
+df <- tibble(wkno, date, Topic, reading, exercise)
+colnames(df) <- c("Week No.", "Date", "Topic", "Reading", "Exercise"
+                  )
+df |> knitr::kable()
+```
