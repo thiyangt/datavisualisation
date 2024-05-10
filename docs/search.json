@@ -116,7 +116,7 @@
     "href": "week1/index.html#common-fate",
     "title": "Introduction to Data Visualisation",
     "section": "Common fate",
-    "text": "Common fate\nWhen objects move in the same direction or at a similar pace, our brains automatically group them together. (eg: a flock of birds)"
+    "text": "Common fate\nWhen objects move in the same direction or at a similar pace, our brains automatically group them together. (eg: a flock of birds)\n\n\nNULL"
   },
   {
     "objectID": "week1/index.html#exercise",
@@ -131,13 +131,6 @@
     "title": "Introduction to Data Visualisation",
     "section": "Acknowledgement",
     "text": "Acknowledgement\n\nKirk, A. (2016). Data visualisation: a handbook for data driven design\nGestalt Laws Applied to Data Visualization, https://daydreamingnumbers.com/"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "index.html",
@@ -179,6 +172,20 @@
     "href": "index.html#weekly-schedule",
     "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
     "section": "Weekly Schedule:",
-    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography"
+    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "week1/assignment1.html",
+    "href": "week1/assignment1.html",
+    "title": "STA 492 2.0/ASP 460 2.0 Data Visualisation",
+    "section": "",
+    "text": "Due date:\n15 May 2024\nAssignment 1:\n10 marks\nTask:\n\nCapture a photograph demonstrating the application of Gestalt laws.\nExplain how the Gestalt principles were utilized in your photograph.\nYou can use any location to take your photograph.\nYou must document your work in an RMarkdown document. Your work should be fully reproducible. That means, you should submit your .Rmd file, .html file and any attachments. The best reports will be published on the course’s website.\n\nAcademic Integrity Notice:\nPlagiarism Policy: Reports found to be plagiarized will receive a score of 0 for the assignment."
   }
 ]

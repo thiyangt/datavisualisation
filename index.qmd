@@ -16,7 +16,7 @@ Available on LMS
 
 ## Policies and regulations:
 
-To access important information regarding the unit, please go to the course Learning Management System (LMS) page. [Click here](https://lms.fas.sjp.ac.lk/enrol/index.php?id=689) to go directly to the LMS.
+To access important information regarding the unit, please go to the course Learning Management System (LMS) page. [Click here](https://lms.fas.sjp.ac.lk/enrol/index.php?id=3720) to go directly to the LMS.
 
 ## Weekly Schedule:
 
@@ -27,8 +27,9 @@ date <- c("April 30, 2024")
 Topic <- c("[Introduction to Data Viualisation](./week1/index.html)")
 reading <- c("[Gestalt Law in Photography](https://www.creative-photographer.com/how-to-use-gestalt-theory-for-better-composition/)")
 exercise <- c("")
-df <- tibble(wkno, date, Topic, reading, exercise)
-colnames(df) <- c("Week No.", "Date", "Topic", "Reading", "Exercise"
+assignments <- c("[Assignment 1](./week1/assignment1.html)")
+df <- tibble(wkno, date, Topic, reading, exercise, assignments)
+colnames(df) <- c("Week No.", "Date", "Topic", "Reading", "Exercise", "Assignments"
                   )
 df |> knitr::kable()
 ```

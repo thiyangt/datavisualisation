@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Dr.&nbsp;Thiyanga S. Talagala   Department of Statistics, Faculty of Applied Sciences   University of Sri Jayewardenepura, Sri Lanka">
   <title>datavisualisation - Introduction to Data Visualisation</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -686,13 +687,16 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section id="simplicity" class="slide level2">
 <h2>Simplicity</h2>
 <p>The law of simplicity indicates that our mind perceives everything in its simplest form.</p>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.gif" class="r-stretch"></section>
+</section>
 <section id="common-fate" class="slide level2">
 <h2>Common fate</h2>
 <p>When objects move in the same direction or at a similar pace, our brains automatically group them together. (eg: a flock of birds)</p>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.gif" class="r-stretch"></section></section>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+</div>
+</section></section>
 <section>
 <section id="preattentive-attributes-that-we-can-use-in-our-visualisations-to-direct-our-readers-attention." class="title-slide slide level1 center">
 <h1>Preattentive attributes that we can use in our visualisations to direct our readers attention.</h1>
@@ -702,11 +706,11 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <h2>Exercise</h2>
 <p>Draw a plot to show the relationship between Life Expectancy and Countries</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>gapminder <span class="sc">|&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, continent <span class="sc">==</span> <span class="st">"Americas"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">select</span>(country, lifeExp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a></a>gapminder <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, continent <span class="sc">==</span> <span class="st">"Americas"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a></a>  <span class="fu">select</span>(country, lifeExp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 25 × 2
    country            lifeExp
@@ -732,8 +736,10 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <li><p><a href="https://daydreamingnumbers.com/blog/gestalt-laws-data-visualization/">Gestalt Laws Applied to Data Visualization, https://daydreamingnumbers.com/</a></p></li>
 </ul>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -762,7 +768,6 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -948,42 +953,80 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1061,10 +1104,27 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1074,8 +1134,17 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1089,7 +1158,11 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
