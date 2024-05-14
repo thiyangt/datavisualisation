@@ -575,41 +575,41 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">type =</span> <span class="st">"div"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(<span class="at">data=</span>penguins, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g, <span class="at">col=</span> species)) <span class="sc">+</span></span>
+<span id="cb14-2"><a></a><span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb14-3"><a></a><span class="fu">facet_grid</span>(species <span class="sc">~</span> island) <span class="sc">+</span> </span>
+<span id="cb14-4"><a></a><span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#1b9e77"</span>,<span class="st">"red"</span>,<span class="st">"#7570b3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">type =</span> <span class="st">"seq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="at">data=</span>penguins, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g, <span class="at">col=</span> species)) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a><span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb15-3"><a></a><span class="fu">facet_grid</span>(species <span class="sc">~</span> island) <span class="sc">+</span> </span>
+<span id="cb15-4"><a></a><span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gentoo"</span><span class="ot">=</span><span class="st">"#1b9e77"</span>, <span class="st">"Chinstrap"</span><span class="ot">=</span><span class="st">"red"</span>, <span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#7570b3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">type =</span> <span class="st">"qual"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">type =</span> <span class="st">"div"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(<span class="at">data=</span>penguins, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g, <span class="at">col=</span> species)) <span class="sc">+</span></span>
-<span id="cb17-2"><a></a><span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb17-3"><a></a><span class="fu">facet_grid</span>(species <span class="sc">~</span> island) <span class="sc">+</span> </span>
-<span id="cb17-4"><a></a><span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#1b9e77"</span>,<span class="st">"red"</span>,<span class="st">"#7570b3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">type =</span> <span class="st">"seq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(<span class="at">data=</span>penguins, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g, <span class="at">col=</span> species)) <span class="sc">+</span></span>
-<span id="cb18-2"><a></a><span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb18-3"><a></a><span class="fu">facet_grid</span>(species <span class="sc">~</span> island) <span class="sc">+</span> </span>
-<span id="cb18-4"><a></a><span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gentoo"</span><span class="ot">=</span><span class="st">"#1b9e77"</span>, <span class="st">"Chinstrap"</span><span class="ot">=</span><span class="st">"red"</span>, <span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#7570b3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">type =</span> <span class="st">"qual"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
