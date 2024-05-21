@@ -181,7 +181,6 @@ scale_colour_manual(values = c("#1b9e77","#d95f02","#7570b3"))
 
 ------------------------------------------------------------------------
 
-
 ```{r, echo=TRUE}
 
 ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +
@@ -219,7 +218,6 @@ RColorBrewer::display.brewer.all(type = "qual")
 ```
 
 ------------------------------------------------------------------------
-
 
 ```{r, echo=TRUE}
 ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +

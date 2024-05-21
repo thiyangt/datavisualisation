@@ -1,0 +1,245 @@
+---
+title: "Beyond Basics: Elevate Your Plots"
+subtitle: ""
+author: "Dr. Thiyanga S. Talagala <br/>  Department of Statistics, Faculty of Applied Sciences <br/> University of Sri Jayewardenepura, Sri Lanka"
+format:
+  revealjs:
+    width: 2000
+    height: 1000
+    margin: 0.1
+    theme: [simple, custom.scss]
+    transition: slide
+    background-transition: fade
+    slide-number: true
+    show-slide-number: all
+    title-slide-attributes: 
+      data-background-color: "#800026"
+      data-background-image: none
+---
+
+## Packages
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
+library(ggplot2)
+library(tibble)
+# install.packages("devtools")
+#devtools::install_github("thiyangt/elephants")
+library(elephants)
+#devtools::install_github("thiyangt/drone")
+library(drone)
+```
+
+## Data
+
+```{r, echo=TRUE}
+elephants
+```
+
+```{r, echo=TRUE}
+data("worldbankdata")
+worldbankdata
+```
+
+# Pairwise plot matrix, scatterplot plot matrix, parallel coordinates plot, survival plot
+
+## 
+
+```{r}
+#install.packages("GGally")
+library(GGally)
+ggpairs(elephants)
+```
+
+## 
+
+```{r}
+ggpairs(elephants, columns = c(2, 3, 4))
+```
+
+## 
+
+```{r}
+ggpairs(elephants, columns = c(2, 8, 9))
+```
+
+## 
+
+```{r}
+ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender))
+```
+
+## 
+
+```{r}
+ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = "Dark2") 
+```
+
+## 
+
+```{r}
+ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
+```
+
+## 
+
+```{r}
+ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + theme_bw()
+```
+
+## 
+
+```{r}
+ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + theme_bw()
+```
+
+---
+
+# Combine separate ggplots into the same graphic
+
+---
+
+::: columns
+::: {.column width="50%"}
+```{r, echo=TRUE}
+p1 <- ggplot(elephants, aes(x=Gender, fill=Gender)) + geom_bar()
+p1
+```
+:::
+
+::: {.column width="50%"}
+```{r, echo=TRUE}
+p2 <- ggplot(elephants, aes(x=Height, y=Fore_Feet_Circumference)) + geom_point() + coord_fixed(ratio=2)
+p2
+```
+:::
+:::
+
+## 
+
+```{r}
+library(patchwork)
+p1+p2
+```
+
+---
+
+# Arranging plots into a grid
+
+---
+
+
+::: columns
+::: {.column width="50%"}
+```{r, echo=TRUE}
+p1 <- ggplot(elephants, aes(x=Gender, fill=Gender)) + geom_bar()
+p1
+```
+:::
+
+::: {.column width="50%"}
+```{r, echo=TRUE}
+p2 <- ggplot(elephants, aes(x=Height, y=Fore_Feet_Circumference)) + geom_point() + coord_fixed(ratio=2)
+p2
+```
+:::
+:::
+
+## 
+
+```{r}
+library(cowplot)
+plot_grid(p1, p2, labels = c('A', 'B'), label_size = 12)
+```
+
+# Creating graphics with details from statistical tests
+
+Defaults return
+
+✅ raw data + distributions ✅ descriptive statistics ✅ inferential statistics ✅ effect size + CIs ✅ pairwise comparisons ✅ Bayesian hypothesis-testing ✅ Bayesian estimation
+
+## 
+
+```{r}
+library(ggstatsplot)
+ggbetweenstats(
+  data  = elephants,
+  x     = Gender,
+  y     = Height,
+  title = "Distribution of height by gender"
+)
+```
+
+## 
+
+To visualize the distribution of a single variable and check if its mean is significantly different from a specified value with a one-sample test
+
+```{r}
+gghistostats(
+  data       = elephants,
+  x          = Height,
+  title      = "Height of Elephants",
+  test.value = 2.5,
+  binwidth   = 0.5
+)
+```
+
+# Publication Ready Plots
+
+## 
+
+```{r}
+library("ggpubr")
+gghistogram(elephants, x = "Height",
+   add = "mean", rug = TRUE,
+   color = "Gender", fill = "Gender",
+   palette = c( "#e7298a","#081d58"))
+```
+
+
+##
+
+```{r}
+ggboxplot(elephants, y = "Height", x="Gender",
+   color = "Gender",
+   palette = c( "#e7298a","#081d58"),
+   add = "jitter", shape = "Gender")
+```
+
+
+#  Interactively explore your data by visualizing it with the ggplot2 package
+
+## In-class demo
+
+```r
+library("esquisse")
+esquisse::esquisser(elephants::elephants)
+```
+
+---
+
+#  Add graphical information about one of the main panel’s axis.
+
+---
+
+```{r}
+library(ggside)
+ggplot(elephants, aes(x=Height, y=Fore_Feet_Circumference, colour = Gender)) + 
+  geom_point(size = 2) +
+  geom_xsideboxplot(aes(y =Gender), orientation = "y") +
+  geom_ysidedensity(aes(x = after_stat(density)), position = "stack") +
+  scale_ysidex_continuous(guide = guide_axis(angle = 90), minor_breaks = NULL) +
+  theme(ggside.panel.scale = .3)
+```
+
+---
+
+```{r}
+library(ggside)
+ggplot(elephants, aes(x=Height, y=Weight, colour = Gender)) + 
+  geom_point(size = 2) +
+  geom_xsideboxplot(aes(y =Gender), orientation = "y") +
+  geom_ysidedensity(aes(x = after_stat(density)), position = "stack") +
+  scale_ysidex_continuous(guide = guide_axis(angle = 90), minor_breaks = NULL) +
+  theme(ggside.panel.scale = .3)
+```
+

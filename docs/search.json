@@ -1,136 +1,31 @@
 [
   {
-    "objectID": "week2/index.html#packages-we-need-today",
-    "href": "week2/index.html#packages-we-need-today",
-    "title": "The Grammar of Graphics",
-    "section": "Packages we need today",
-    "text": "Packages we need today\n\nlibrary(ggplot2)\nlibrary(palmerpenguins)"
+    "objectID": "week3/index.html#packages",
+    "href": "week3/index.html#packages",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(ggplot2)\nlibrary(tibble)\n# install.packages(\"devtools\")\n#devtools::install_github(\"thiyangt/elephants\")\nlibrary(elephants)\n#devtools::install_github(\"thiyangt/drone\")\nlibrary(drone)"
   },
   {
-    "objectID": "week2/index.html#pioneers",
-    "href": "week2/index.html#pioneers",
-    "title": "The Grammar of Graphics",
-    "section": "Pioneers",
-    "text": "Pioneers\n\n\nConcept: Leland Wilkinson\n\n\nImplementation: Hadley Wickham"
+    "objectID": "week3/index.html#data",
+    "href": "week3/index.html#data",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Data",
+    "text": "Data\n\nelephants\n\n# A tibble: 1,700 × 9\n   Category Age_Category Gender Flank_Girth Heart_Girth Neck_Girth Weight Height\n   &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 African  less than 1… male          291.        239.       211.  1775.   2.46\n 2 African  less than 1… male          270.        331.       119.  1564.   2.28\n 3 African  less than 1… male          291.        275.       200.  2070.   2.56\n 4 African  less than 1… male          285.        253.       111.  1716.   2.33\n 5 African  less than 1… male          184.        389.       180.  2736.   2.38\n 6 African  less than 1… male          235.        284.       158.  1773.   2.2 \n 7 African  less than 1… male          265.        262.       161.  1651.   2.68\n 8 African  less than 1… male          226.        226.       123.  2053.   2.67\n 9 African  less than 1… male          266.        290.       191.  2159.   2.63\n10 African  less than 1… male          163.        332.       172.  2075.   2.12\n# ℹ 1,690 more rows\n# ℹ 1 more variable: Fore_Feet_Circumference &lt;dbl&gt;\n\n\n\ndata(\"worldbankdata\")\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows"
   },
   {
-    "objectID": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
-    "href": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
-    "title": "The Grammar of Graphics",
-    "section": "Building Blocks of layers with the grammar of graphics",
-    "text": "Building Blocks of layers with the grammar of graphics\n\nData\nAesthetics\nGeometrics\nFacets\nScales\nStatistics\nCoordinates\nThemes"
-  },
-  {
-    "objectID": "week2/index.html#step-1-take-data",
-    "href": "week2/index.html#step-1-take-data",
-    "title": "The Grammar of Graphics",
-    "section": "Step 1: Take Data",
-    "text": "Step 1: Take Data\n\ndata(penguins)"
-  },
-  {
-    "objectID": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
-    "href": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
-    "title": "The Grammar of Graphics",
-    "section": "Step 2: Take a canvas to do the plot",
-    "text": "Step 2: Take a canvas to do the plot\n\nggplot()"
-  },
-  {
-    "objectID": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
-    "href": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
-    "title": "The Grammar of Graphics",
-    "section": "Take your data onto your canvas for plotting",
-    "text": "Take your data onto your canvas for plotting\n\nggplot(data=penguins)"
-  },
-  {
-    "objectID": "week2/index.html#data-aesthetics",
-    "href": "week2/index.html#data-aesthetics",
-    "title": "The Grammar of Graphics",
-    "section": "Data + Aesthetics",
-    "text": "Data + Aesthetics"
-  },
-  {
-    "objectID": "week2/index.html#data-aesthetics-geom",
-    "href": "week2/index.html#data-aesthetics-geom",
-    "title": "The Grammar of Graphics",
-    "section": "Data + Aesthetics + Geom",
-    "text": "Data + Aesthetics + Geom\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point()"
-  },
-  {
-    "objectID": "week2/index.html#data-aesthetics-geom-facet",
-    "href": "week2/index.html#data-aesthetics-geom-facet",
-    "title": "The Grammar of Graphics",
-    "section": "Data + Aesthetics + Geom + Facet",
-    "text": "Data + Aesthetics + Geom + Facet\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species)"
-  },
-  {
-    "objectID": "week2/index.html#data-aesthetics-geom-facet-scale",
-    "href": "week2/index.html#data-aesthetics-geom-facet-scale",
-    "title": "The Grammar of Graphics",
-    "section": "Data + Aesthetics + Geom + Facet + Scale",
-    "text": "Data + Aesthetics + Geom + Facet + Scale\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"#1b9e77\",\"#d95f02\",\"#7570b3\"))"
-  },
-  {
-    "objectID": "week2/index.html#data-aesthetics-geom-facet-stat",
-    "href": "week2/index.html#data-aesthetics-geom-facet-stat",
-    "title": "The Grammar of Graphics",
-    "section": "Data + Aesthetics + Geom + Facet + Stat",
-    "text": "Data + Aesthetics + Geom + Facet + Stat\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) +\nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 7,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )"
-  },
-  {
-    "objectID": "week1/assignment1.html",
-    "href": "week1/assignment1.html",
-    "title": "STA 492 2.0/ASP 460 2.0 Data Visualisation",
+    "objectID": "week3/index.html#section-11",
+    "href": "week3/index.html#section-11",
+    "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "Due date:\n15 May 2024\nAssignment 1:\n10 marks\nTask:\n\nCapture a photograph demonstrating the application of Gestalt laws.\nExplain how the Gestalt principles were utilized in your photograph.\nYou can use any location to take your photograph.\nYou must document your work in an RMarkdown document. Your work should be fully reproducible. That means, you should submit your .Rmd file, .html file and any attachments. The best reports will be published on the course’s website.\n\nAcademic Integrity Notice:\nPlagiarism Policy: Reports found to be plagiarized will receive a score of 0 for the assignment."
+    "text": "To visualize the distribution of a single variable and check if its mean is significantly different from a specified value with a one-sample test"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
-    "section": "",
-    "text": "Dr Thiyanga S. Talagala"
-  },
-  {
-    "objectID": "index.html#lecturer-in-charge",
-    "href": "index.html#lecturer-in-charge",
-    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
-    "section": "",
-    "text": "Dr Thiyanga S. Talagala"
-  },
-  {
-    "objectID": "index.html#email",
-    "href": "index.html#email",
-    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
-    "section": "Email:",
-    "text": "Email:\nttatalagala@sjp.ac.lk"
-  },
-  {
-    "objectID": "index.html#course-outline",
-    "href": "index.html#course-outline",
-    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
-    "section": "Course outline:",
-    "text": "Course outline:\nAvailable on LMS"
-  },
-  {
-    "objectID": "index.html#policies-and-regulations",
-    "href": "index.html#policies-and-regulations",
-    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
-    "section": "Policies and regulations:",
-    "text": "Policies and regulations:\nTo access important information regarding the unit, please go to the course Learning Management System (LMS) page. Click here to go directly to the LMS."
-  },
-  {
-    "objectID": "index.html#weekly-schedule",
-    "href": "index.html#weekly-schedule",
-    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
-    "section": "Weekly Schedule:",
-    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone"
+    "objectID": "week3/index.html#in-class-demo",
+    "href": "week3/index.html#in-class-demo",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "In-class demo",
+    "text": "In-class demo\nlibrary(\"esquisse\")\nesquisse::esquisser(elephants::elephants)"
   },
   {
     "objectID": "week1/index.html#perceiving",
@@ -264,5 +159,138 @@
     "title": "Introduction to Data Visualisation",
     "section": "Acknowledgement",
     "text": "Acknowledgement\n\nKirk, A. (2016). Data visualisation: a handbook for data driven design\nGestalt Laws Applied to Data Visualization, https://daydreamingnumbers.com/"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
+    "section": "",
+    "text": "Dr Thiyanga S. Talagala"
+  },
+  {
+    "objectID": "index.html#lecturer-in-charge",
+    "href": "index.html#lecturer-in-charge",
+    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
+    "section": "",
+    "text": "Dr Thiyanga S. Talagala"
+  },
+  {
+    "objectID": "index.html#email",
+    "href": "index.html#email",
+    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
+    "section": "Email:",
+    "text": "Email:\nttatalagala@sjp.ac.lk"
+  },
+  {
+    "objectID": "index.html#course-outline",
+    "href": "index.html#course-outline",
+    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
+    "section": "Course outline:",
+    "text": "Course outline:\nAvailable on LMS"
+  },
+  {
+    "objectID": "index.html#policies-and-regulations",
+    "href": "index.html#policies-and-regulations",
+    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
+    "section": "Policies and regulations:",
+    "text": "Policies and regulations:\nTo access important information regarding the unit, please go to the course Learning Management System (LMS) page. Click here to go directly to the LMS."
+  },
+  {
+    "objectID": "index.html#weekly-schedule",
+    "href": "index.html#weekly-schedule",
+    "title": "STA 492 2.0/ ASP 454 2.0 Data Visualisation",
+    "section": "Weekly Schedule:",
+    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3\nMay 21, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "week1/assignment1.html",
+    "href": "week1/assignment1.html",
+    "title": "STA 492 2.0/ASP 460 2.0 Data Visualisation",
+    "section": "",
+    "text": "Due date:\n15 May 2024\nAssignment 1:\n10 marks\nTask:\n\nCapture a photograph demonstrating the application of Gestalt laws.\nExplain how the Gestalt principles were utilized in your photograph.\nYou can use any location to take your photograph.\nYou must document your work in an RMarkdown document. Your work should be fully reproducible. That means, you should submit your .Rmd file, .html file and any attachments. The best reports will be published on the course’s website.\n\nAcademic Integrity Notice:\nPlagiarism Policy: Reports found to be plagiarized will receive a score of 0 for the assignment."
+  },
+  {
+    "objectID": "week2/index.html#packages-we-need-today",
+    "href": "week2/index.html#packages-we-need-today",
+    "title": "The Grammar of Graphics",
+    "section": "Packages we need today",
+    "text": "Packages we need today\n\nlibrary(ggplot2)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "week2/index.html#pioneers",
+    "href": "week2/index.html#pioneers",
+    "title": "The Grammar of Graphics",
+    "section": "Pioneers",
+    "text": "Pioneers\n\n\nConcept: Leland Wilkinson\n\n\nImplementation: Hadley Wickham"
+  },
+  {
+    "objectID": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
+    "href": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
+    "title": "The Grammar of Graphics",
+    "section": "Building Blocks of layers with the grammar of graphics",
+    "text": "Building Blocks of layers with the grammar of graphics\n\nData\nAesthetics\nGeometrics\nFacets\nScales\nStatistics\nCoordinates\nThemes"
+  },
+  {
+    "objectID": "week2/index.html#step-1-take-data",
+    "href": "week2/index.html#step-1-take-data",
+    "title": "The Grammar of Graphics",
+    "section": "Step 1: Take Data",
+    "text": "Step 1: Take Data\n\ndata(penguins)"
+  },
+  {
+    "objectID": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
+    "href": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
+    "title": "The Grammar of Graphics",
+    "section": "Step 2: Take a canvas to do the plot",
+    "text": "Step 2: Take a canvas to do the plot\n\nggplot()"
+  },
+  {
+    "objectID": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
+    "href": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
+    "title": "The Grammar of Graphics",
+    "section": "Take your data onto your canvas for plotting",
+    "text": "Take your data onto your canvas for plotting\n\nggplot(data=penguins)"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics",
+    "href": "week2/index.html#data-aesthetics",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics",
+    "text": "Data + Aesthetics"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom",
+    "href": "week2/index.html#data-aesthetics-geom",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom",
+    "text": "Data + Aesthetics + Geom\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point()"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet",
+    "href": "week2/index.html#data-aesthetics-geom-facet",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet",
+    "text": "Data + Aesthetics + Geom + Facet\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species)"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet-scale",
+    "href": "week2/index.html#data-aesthetics-geom-facet-scale",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet + Scale",
+    "text": "Data + Aesthetics + Geom + Facet + Scale\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"#1b9e77\",\"#d95f02\",\"#7570b3\"))"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet-stat",
+    "href": "week2/index.html#data-aesthetics-geom-facet-stat",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet + Stat",
+    "text": "Data + Aesthetics + Geom + Facet + Stat\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) +\nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 7,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )"
   }
 ]
