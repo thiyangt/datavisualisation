@@ -18,7 +18,7 @@
     "href": "week3/index.html#section-11",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "To visualize the distribution of a single variable and check if its mean is significantly different from a specified value with a one-sample test"
+    "text": "library(patchwork)\np1+p2"
   },
   {
     "objectID": "week3/index.html#in-class-demo",
@@ -292,5 +292,145 @@
     "title": "The Grammar of Graphics",
     "section": "Data + Aesthetics + Geom + Facet + Stat",
     "text": "Data + Aesthetics + Geom + Facet + Stat\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) +\nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 7,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )"
+  },
+  {
+    "objectID": "week3/index.html#section",
+    "href": "week3/index.html#section",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "#install.packages(\"GGally\")\nlibrary(GGally)\nggpairs(elephants)"
+  },
+  {
+    "objectID": "week3/index.html#section-1",
+    "href": "week3/index.html#section-1",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 3, 4))"
+  },
+  {
+    "objectID": "week3/index.html#section-2",
+    "href": "week3/index.html#section-2",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9))"
+  },
+  {
+    "objectID": "week3/index.html#section-3",
+    "href": "week3/index.html#section-3",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender))"
+  },
+  {
+    "objectID": "week3/index.html#section-4",
+    "href": "week3/index.html#section-4",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\")"
+  },
+  {
+    "objectID": "week3/index.html#section-5",
+    "href": "week3/index.html#section-5",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\")"
+  },
+  {
+    "objectID": "week3/index.html#section-6",
+    "href": "week3/index.html#section-6",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()"
+  },
+  {
+    "objectID": "week3/index.html#section-7",
+    "href": "week3/index.html#section-7",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()\n\n\nYour turn: Fix aspect ratio of the plots."
+  },
+  {
+    "objectID": "week3/index.html#section-8",
+    "href": "week3/index.html#section-8",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(patchwork)\np1+p2"
+  },
+  {
+    "objectID": "week3/index.html#section-9",
+    "href": "week3/index.html#section-9",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(cowplot)\nplot_grid(p1, p2, labels = c('A', 'B'), label_size = 12)"
+  },
+  {
+    "objectID": "week3/index.html#section-10",
+    "href": "week3/index.html#section-10",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(ggstatsplot)\nggbetweenstats(\n  data  = elephants,\n  x     = Gender,\n  y     = Height,\n  title = \"Distribution of height by gender\"\n)"
+  },
+  {
+    "objectID": "week3/index.html#section-12",
+    "href": "week3/index.html#section-12",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(cowplot)\nplot_grid(p1, p2, labels = c('A', 'B'), label_size = 12)"
+  },
+  {
+    "objectID": "week3/index.html#section-13",
+    "href": "week3/index.html#section-13",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(ggstatsplot)\nggbetweenstats(\n  data  = elephants,\n  x     = Gender,\n  y     = Height,\n  title = \"Distribution of height by gender\"\n)"
+  },
+  {
+    "objectID": "week3/index.html#section-14",
+    "href": "week3/index.html#section-14",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "To visualize the distribution of a single variable and check if its mean is significantly different from a specified value with a one-sample test\n\ngghistostats(\n  data       = elephants,\n  x          = Height,\n  title      = \"Height of Elephants\",\n  test.value = 2.5,\n  binwidth   = 0.5\n)"
+  },
+  {
+    "objectID": "week3/index.html#section-15",
+    "href": "week3/index.html#section-15",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(\"ggpubr\")\ngghistogram(elephants, x = \"Height\",\n   add = \"mean\", rug = TRUE,\n   color = \"Gender\", fill = \"Gender\",\n   palette = c( \"#e7298a\",\"#081d58\"))"
+  },
+  {
+    "objectID": "week3/index.html#section-16",
+    "href": "week3/index.html#section-16",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggboxplot(elephants, y = \"Height\", x=\"Gender\",\n   color = \"Gender\",\n   palette = c( \"#e7298a\",\"#081d58\"),\n   add = \"jitter\", shape = \"Gender\")"
+  },
+  {
+    "objectID": "week3/index.html#beware",
+    "href": "week3/index.html#beware",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Beware!",
+    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + coord_fixed(ratio=ar)"
+  },
+  {
+    "objectID": "week3/index.html#beware-1",
+    "href": "week3/index.html#beware-1",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Beware!",
+    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme(aspect.ratio = ar)"
+  },
+  {
+    "objectID": "week3/index.html#task-1",
+    "href": "week3/index.html#task-1",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Task 1",
+    "text": "Task 1"
+  },
+  {
+    "objectID": "week3/index.html#task-2",
+    "href": "week3/index.html#task-2",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Task 2",
+    "text": "Task 2\n\nlibrary(drone)\nggplot(worldbankdata, aes(x=Cooking, y=Electricity, col=Region)) + geom_point()"
   }
 ]

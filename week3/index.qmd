@@ -44,7 +44,7 @@ worldbankdata
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 #install.packages("GGally")
 library(GGally)
 ggpairs(elephants)
@@ -52,51 +52,132 @@ ggpairs(elephants)
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 ggpairs(elephants, columns = c(2, 3, 4))
 ```
 
+
+
 ## 
 
-```{r}
+```{r, echo=TRUE}
 ggpairs(elephants, columns = c(2, 8, 9))
 ```
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender))
 ```
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = "Dark2") 
 ```
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2")
 ```
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + theme_bw()
 ```
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + theme_bw()
+```
+
+Your turn: Fix aspect ratio of the plots.
+
+# Aspect Ratio
+
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r, echo=TRUE}
+df <- data.frame(
+    x = runif(100, 0, 5),
+    y = runif(100, 0, 5))
+
+ggplot(df, aes(x=x, y=y)) + geom_point() 
+```
+:::
+
+::: {.column width="50%"}
+
+```{r, echo=TRUE}
+ggplot(df, aes(x=x, y=y)) + geom_point() + coord_fixed()
+```
+
+:::
+
+::::
+
+---
+
+```{r, echo=TRUE}
+ggplot(data=elephants,
+aes(x=Fore_Feet_Circumference,
+y=Height)) + geom_point()
+```
+
+#
+
+```{r, echo=TRUE}
+ggplot(data=elephants,
+aes(x=Fore_Feet_Circumference,
+y=Height)) + geom_point() + coord_fixed()
+```
+
+#
+
+```{r, echo=TRUE}
+ggplot(data=elephants,
+aes(x=Fore_Feet_Circumference,
+y=Height)) + geom_point() + coord_equal()
+```
+
+#
+
+```{r, echo=TRUE}
+x <- elephants$Fore_Feet_Circumference
+y <- elephants$Height
+ar <- (max(x)-min(x))/(max(y)-min(y))
+ggplot(data=elephants,
+aes(x=Fore_Feet_Circumference,
+y=Height)) + geom_point() + coord_fixed(ratio=ar)
+```
+
+ratio aspect ratio, expressed as $\frac{y}{x}$
+
+---
+
+## Beware!
+
+```{r, echo=TRUE}
+ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + coord_fixed(ratio=ar)
 ```
 
 ---
 
+## Beware!
+
+```{r, echo=TRUE}
+ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = "Dark2") + scale_fill_brewer(palette = "Dark2") + theme(aspect.ratio = ar)
+```
+
 # Combine separate ggplots into the same graphic
 
----
+------------------------------------------------------------------------
 
 ::: columns
 ::: {.column width="50%"}
@@ -108,7 +189,9 @@ p1
 
 ::: {.column width="50%"}
 ```{r, echo=TRUE}
-p2 <- ggplot(elephants, aes(x=Height, y=Fore_Feet_Circumference)) + geom_point() + coord_fixed(ratio=2)
+p2 <- ggplot(data=elephants,
+aes(x=Fore_Feet_Circumference,
+y=Height)) + geom_point() + coord_fixed(ratio=ar)
 p2
 ```
 :::
@@ -116,17 +199,16 @@ p2
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 library(patchwork)
 p1+p2
 ```
 
----
+------------------------------------------------------------------------
 
 # Arranging plots into a grid
 
----
-
+------------------------------------------------------------------------
 
 ::: columns
 ::: {.column width="50%"}
@@ -138,7 +220,9 @@ p1
 
 ::: {.column width="50%"}
 ```{r, echo=TRUE}
-p2 <- ggplot(elephants, aes(x=Height, y=Fore_Feet_Circumference)) + geom_point() + coord_fixed(ratio=2)
+p2 <- ggplot(data=elephants,
+aes(x=Fore_Feet_Circumference,
+y=Height)) + geom_point() + coord_fixed(ratio=ar)
 p2
 ```
 :::
@@ -146,7 +230,7 @@ p2
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 library(cowplot)
 plot_grid(p1, p2, labels = c('A', 'B'), label_size = 12)
 ```
@@ -159,7 +243,7 @@ Defaults return
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 library(ggstatsplot)
 ggbetweenstats(
   data  = elephants,
@@ -173,7 +257,7 @@ ggbetweenstats(
 
 To visualize the distribution of a single variable and check if its mean is significantly different from a specified value with a one-sample test
 
-```{r}
+```{r, echo=TRUE}
 gghistostats(
   data       = elephants,
   x          = Height,
@@ -187,7 +271,7 @@ gghistostats(
 
 ## 
 
-```{r}
+```{r, echo=TRUE}
 library("ggpubr")
 gghistogram(elephants, x = "Height",
    add = "mean", rug = TRUE,
@@ -195,45 +279,43 @@ gghistogram(elephants, x = "Height",
    palette = c( "#e7298a","#081d58"))
 ```
 
+## 
 
-##
-
-```{r}
+```{r, echo=TRUE}
 ggboxplot(elephants, y = "Height", x="Gender",
    color = "Gender",
    palette = c( "#e7298a","#081d58"),
    add = "jitter", shape = "Gender")
 ```
 
-
-#  Interactively explore your data by visualizing it with the ggplot2 package
+# Interactively explore your data by visualizing it with the ggplot2 package
 
 ## In-class demo
 
-```r
+``` r
 library("esquisse")
 esquisse::esquisser(elephants::elephants)
 ```
 
----
+------------------------------------------------------------------------
 
-#  Add graphical information about one of the main panel’s axis.
+# Add graphical information about one of the main panel’s axis.
 
----
+------------------------------------------------------------------------
 
-```{r}
+```{r, echo=TRUE}
 library(ggside)
 ggplot(elephants, aes(x=Height, y=Fore_Feet_Circumference, colour = Gender)) + 
   geom_point(size = 2) +
   geom_xsideboxplot(aes(y =Gender), orientation = "y") +
   geom_ysidedensity(aes(x = after_stat(density)), position = "stack") +
   scale_ysidex_continuous(guide = guide_axis(angle = 90), minor_breaks = NULL) +
-  theme(ggside.panel.scale = .3)
+  theme(ggside.panel.scale = .3, aspect.ratio = ar)
 ```
 
----
+------------------------------------------------------------------------
 
-```{r}
+```{r, echo=TRUE}
 library(ggside)
 ggplot(elephants, aes(x=Height, y=Weight, colour = Gender)) + 
   geom_point(size = 2) +
@@ -243,3 +325,17 @@ ggplot(elephants, aes(x=Height, y=Weight, colour = Gender)) +
   theme(ggside.panel.scale = .3)
 ```
 
+# Level up the plots or take an alternative graph.
+
+## Task 1
+
+```{r}
+library(elephants)
+ggplot(data = elephants, aes(x=Age_Category)) + geom_bar() + facet_wrap(vars(Gender))
+```
+## Task 2
+
+```{r, echo=TRUE}
+library(drone)
+ggplot(worldbankdata, aes(x=Cooking, y=Electricity, col=Region)) + geom_point()
+```
