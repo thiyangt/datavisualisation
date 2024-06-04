@@ -2,7 +2,7 @@ library(elephants)
 data(elephants)
 View(elephants)
 
-library(elephants)
+library(ggplot2)
 ggplot(data = elephants, 
        aes(x=Age_Category)) + 
   geom_bar() + 
@@ -81,3 +81,42 @@ elephants |>
   count(Gender, Age_Category) |> 
   ggplot(aes(x = Gender, y = Age_category)) + 
   geom_tile(aes(fill = n))
+
+
+
+
+
+
+## Task 2
+library(drone)
+data(worldbankdata)
+g1 <- ggplot(worldbankdata, 
+       aes(x=Cooking,
+           y=Electricity,
+           col=Region)) + 
+  geom_point() + 
+  facet_wrap(vars(Region), 
+             scales = "free_y")
+
+library(plotly)
+ggplotly(g1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

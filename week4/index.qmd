@@ -201,13 +201,23 @@ R code:\_\_\_\_\_\_\_\_\_\_\_
 b1 + geom_bar(position = "dodge")
 ```
 
-### Segmented bar chart/ Stacked bar chart
 
-This chart displays bars divided into segments, where each segment represents a subcategory within the main category.
 
-Position: `fill`
+### Small Multiples or Trellis Chart
 
-R code:\_\_\_\_\_\_\_\_\_\_\_
+This chart displays multiple small bar charts, each representing a different subset of the data.
+
+**Encoding by position**
+
+```{r, comment=NA, message==FALSE}
+ggplot(data=diamonds, aes(x=color))+geom_bar()+facet_wrap(~cut)
+
+```
+
+Your turn: What is the best chart: grouped bar chart, stack bar chart or faceting?
+
+### Percentage stacked bar chart
+
 
 ```{r, echo=FALSE}
 #  stack is default
@@ -221,20 +231,6 @@ ggplot(data=df, aes(x=x1, fill=x2))+
   geom_bar(position = "fill")
 ```
 
-Rcode:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-### Small Multiples or Trellis Chart
-
-This chart displays multiple small bar charts, each representing a different subset of the data.
-
-**Encoding by position**
-
-```{r, comment=NA, message==FALSE}
-ggplot(data=diamonds, aes(x=color))+geom_bar()+facet_wrap(~cut)
-
-```
-
-Your turn: What is the best chart: grouped bar chart, stack bar chart or facetting?
 
 # Categorical vs Quantitative
 
@@ -280,13 +276,7 @@ Geospatial visualisation: Good to identify "hot spots".
 gapminderAsia <- gapminder %>%
 filter(continent == "Asia")
 
-ggplot(gapminderAsia, aes(x=year, fill=lifeExp, y=country))+
-  geom_raster()+
-  scale_fill_viridis_c()
 
-ggplot(gapminderAsia, aes(x=year, fill=lifeExp, y=reorder(country, lifeExp)))+
-  geom_raster()+
-  scale_fill_viridis_c()
 
 ggplot(gapminderAsia, aes(x=year, y=lifeExp, col=country))+
   geom_line()
@@ -295,7 +285,15 @@ ggplot(gapminderAsia, aes(x=year, y=lifeExp, col=country))+
   geom_line() + theme(legend.position = "bottom")
 ```
 
-Your turn: Improve the above plot.
+```{r}
+ggplot(gapminderAsia, aes(x=year, fill=lifeExp, y=country))+
+  geom_raster()+
+  scale_fill_viridis_c()
+
+ggplot(gapminderAsia, aes(x=year, fill=lifeExp, y=reorder(country, lifeExp)))+
+  geom_raster()+
+  scale_fill_viridis_c()
+```
 
 # Plotting summary statistics
 
