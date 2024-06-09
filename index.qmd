@@ -1,5 +1,5 @@
 ---
-title: "STA 492 2.0/ ASP 454 2.0 Data Visualisation"
+title: "STA 492 2.0/ ASP 460 2.0 Data Visualisation"
 ---
 
 ## Lecturer-in-charge:

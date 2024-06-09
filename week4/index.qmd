@@ -201,8 +201,6 @@ R code:\_\_\_\_\_\_\_\_\_\_\_
 b1 + geom_bar(position = "dodge")
 ```
 
-
-
 ### Small Multiples or Trellis Chart
 
 This chart displays multiple small bar charts, each representing a different subset of the data.
@@ -218,7 +216,6 @@ Your turn: What is the best chart: grouped bar chart, stack bar chart or facetin
 
 ### Percentage stacked bar chart
 
-
 ```{r, echo=FALSE}
 #  stack is default
 b1 + geom_bar(position = "fill")
@@ -230,7 +227,6 @@ df <- data.frame(x1 = as.factor(c(1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0)),
 ggplot(data=df, aes(x=x1, fill=x2))+
   geom_bar(position = "fill")
 ```
-
 
 # Categorical vs Quantitative
 
@@ -377,7 +373,6 @@ g1 + stat_summary(fun.data = "mean_cl_boot")
 
 Confidence limits provide us a better idea than standard error limits of whether two means would be deemed statistically different.
 
-
 ## Design of Experiments
 
 Description
@@ -489,6 +484,5 @@ color=color)) +
   geom_smooth(se=FALSE)+facet_grid(~color)
 
 ```
-
 
 Your turn: What is the best chart to visualize the relationship between the price, carat, and color of diamonds?
