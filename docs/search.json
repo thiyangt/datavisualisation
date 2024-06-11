@@ -68,5 +68,418 @@
     "title": "Visualising Qualitative Data",
     "section": "Categorical with two Quantitative variables",
     "text": "Categorical with two Quantitative variables\nR code: ___________\n\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nYour turn: What is the best chart to visualize the relationship between the price, carat, and color of diamonds?"
+  },
+  {
+    "objectID": "week2/index.html#packages-we-need-today",
+    "href": "week2/index.html#packages-we-need-today",
+    "title": "The Grammar of Graphics",
+    "section": "Packages we need today",
+    "text": "Packages we need today\n\nlibrary(ggplot2)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "week2/index.html#pioneers",
+    "href": "week2/index.html#pioneers",
+    "title": "The Grammar of Graphics",
+    "section": "Pioneers",
+    "text": "Pioneers\n\n\nConcept: Leland Wilkinson\n\n\nImplementation: Hadley Wickham"
+  },
+  {
+    "objectID": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
+    "href": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
+    "title": "The Grammar of Graphics",
+    "section": "Building Blocks of layers with the grammar of graphics",
+    "text": "Building Blocks of layers with the grammar of graphics\n\nData\nAesthetics\nGeometrics\nFacets\nScales\nStatistics\nCoordinates\nThemes"
+  },
+  {
+    "objectID": "week2/index.html#step-1-take-data",
+    "href": "week2/index.html#step-1-take-data",
+    "title": "The Grammar of Graphics",
+    "section": "Step 1: Take Data",
+    "text": "Step 1: Take Data\n\ndata(penguins)"
+  },
+  {
+    "objectID": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
+    "href": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
+    "title": "The Grammar of Graphics",
+    "section": "Step 2: Take a canvas to do the plot",
+    "text": "Step 2: Take a canvas to do the plot\n\nggplot()"
+  },
+  {
+    "objectID": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
+    "href": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
+    "title": "The Grammar of Graphics",
+    "section": "Take your data onto your canvas for plotting",
+    "text": "Take your data onto your canvas for plotting\n\nggplot(data=penguins)"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics",
+    "href": "week2/index.html#data-aesthetics",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics",
+    "text": "Data + Aesthetics"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom",
+    "href": "week2/index.html#data-aesthetics-geom",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom",
+    "text": "Data + Aesthetics + Geom\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point()"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet",
+    "href": "week2/index.html#data-aesthetics-geom-facet",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet",
+    "text": "Data + Aesthetics + Geom + Facet\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species)"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet-scale",
+    "href": "week2/index.html#data-aesthetics-geom-facet-scale",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet + Scale",
+    "text": "Data + Aesthetics + Geom + Facet + Scale\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"#1b9e77\",\"#d95f02\",\"#7570b3\"))"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet-stat",
+    "href": "week2/index.html#data-aesthetics-geom-facet-stat",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet + Stat",
+    "text": "Data + Aesthetics + Geom + Facet + Stat\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) +\nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 7,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )"
+  },
+  {
+    "objectID": "week1/assignment1.html",
+    "href": "week1/assignment1.html",
+    "title": "STA 492 2.0/ASP 460 2.0 Data Visualisation",
+    "section": "",
+    "text": "Due date:\n15 May 2024\nAssignment 1:\n10 marks\nTask:\n\nCapture a photograph demonstrating the application of Gestalt laws.\nExplain how the Gestalt principles were utilized in your photograph.\nYou can use any location to take your photograph.\nYou must document your work in an RMarkdown document. Your work should be fully reproducible. That means, you should submit your .Rmd file, .html file and any attachments. The best reports will be published on the course’s website.\n\nAcademic Integrity Notice:\nPlagiarism Policy: Reports found to be plagiarized will receive a score of 0 for the assignment."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "",
+    "text": "Dr Thiyanga S. Talagala"
+  },
+  {
+    "objectID": "index.html#lecturer-in-charge",
+    "href": "index.html#lecturer-in-charge",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "",
+    "text": "Dr Thiyanga S. Talagala"
+  },
+  {
+    "objectID": "index.html#email",
+    "href": "index.html#email",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Email:",
+    "text": "Email:\nttatalagala@sjp.ac.lk"
+  },
+  {
+    "objectID": "index.html#course-outline",
+    "href": "index.html#course-outline",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Course outline:",
+    "text": "Course outline:\nAvailable on LMS"
+  },
+  {
+    "objectID": "index.html#policies-and-regulations",
+    "href": "index.html#policies-and-regulations",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Policies and regulations:",
+    "text": "Policies and regulations:\nTo access important information regarding the unit, please go to the course Learning Management System (LMS) page. Click here to go directly to the LMS."
+  },
+  {
+    "objectID": "index.html#weekly-schedule",
+    "href": "index.html#weekly-schedule",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Weekly Schedule:",
+    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3/4\nMay 21, 2024/ May 28, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone\n\n\n5\nJune 4, 2024\nVisualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)\n\n\nNone\n\n\n6\nJune 11, 2024\nVisualising Distributions\nThe Data Visualisation Catalogue - Distributions\nVisualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/"
+  },
+  {
+    "objectID": "week1/index.html#perceiving",
+    "href": "week1/index.html#perceiving",
+    "title": "Introduction to Data Visualisation",
+    "section": "Perceiving",
+    "text": "Perceiving\n\nWhat do I see?: Reading the chart\n\n\nWhat data is shown?\nWhat is on x-axis/ y-axis?\nWhat do colours represent?\nWhat range of values are displayed?\nStepped magnitude judgement?\nWhere are the least and most/ average?/largest and smallest?"
+  },
+  {
+    "objectID": "week1/index.html#interpreting",
+    "href": "week1/index.html#interpreting",
+    "title": "Introduction to Data Visualisation",
+    "section": "Interpreting",
+    "text": "Interpreting\n\nTranslate what you see into quantitative and/or qualitative meaning\nReader’s ability to perform relational interpretation\n\nAre these patterns normal, expected or unusual?\nWhat features are interesting?\nWhat features are important given the subject knowledge?\n\n\n\nIf you do not have any knowledge about the subject your understanding stops after the perceiving phase."
+  },
+  {
+    "objectID": "week1/index.html#comprehending",
+    "href": "week1/index.html#comprehending",
+    "title": "Introduction to Data Visualisation",
+    "section": "Comprehending",
+    "text": "Comprehending\n\nWhat does it mean to me?\n\n\nWhat does one do with this understanding?\nHave I learned something I did not know before?\nWas it confirmed I did not know before?"
+  },
+  {
+    "objectID": "week1/index.html#exploratory-vs-explanatory",
+    "href": "week1/index.html#exploratory-vs-explanatory",
+    "title": "Introduction to Data Visualisation",
+    "section": "Exploratory vs Explanatory",
+    "text": "Exploratory vs Explanatory\n\n\nExploratory\n\nWhen you have a whole bunch of data and you are not sure what types of trends, relationships, etc. it contains.\nFind the story that the data has to tell you.\n\n\nExplanatory\n\nWhen you already know what the data has to say and you are trying to tell that story to somebody else."
+  },
+  {
+    "objectID": "week1/index.html#three-important-parties",
+    "href": "week1/index.html#three-important-parties",
+    "title": "Introduction to Data Visualisation",
+    "section": "Three important parties",
+    "text": "Three important parties\n\nData\nDesigner\nReader"
+  },
+  {
+    "objectID": "week1/index.html#data",
+    "href": "week1/index.html#data",
+    "title": "Introduction to Data Visualisation",
+    "section": "Data",
+    "text": "Data\n\nCategorical?\nOrdinal?\nDiscrete or continuous?\nHow they are bounded?\nNetwroks/ trees/ hierarchy\nCollection of items, groups, sets, clusters\nSpatial field: scalar, vector, tensor\nOutliers\nHow many dimensions?"
+  },
+  {
+    "objectID": "week1/index.html#designer",
+    "href": "week1/index.html#designer",
+    "title": "Introduction to Data Visualisation",
+    "section": "Designer",
+    "text": "Designer\n\nPlanning:\n\n\nWhat is the output format? (printout, mobile app, etc)\nTime scale\nTools\nWho is your audience (How much assistance do they need?, How familiar are they with the charts?)\nIdentify the goal\n\nWhat point or message are you trying to convey?\nWhat information should they be able to learn from your visualisations?\nExamples: Compare performances, Identify trends, Find outliers, Find relationshsips"
+  },
+  {
+    "objectID": "week1/index.html#reader",
+    "href": "week1/index.html#reader",
+    "title": "Introduction to Data Visualisation",
+    "section": "Reader",
+    "text": "Reader\n\nContextual considerations for the reader\n\n\nPerceiving: What do colors means? What is on x-axis, y-axis?\nIn what direction does the reader follow the plot?\nWhich types of plots are they familiar with?"
+  },
+  {
+    "objectID": "week1/index.html#proximity",
+    "href": "week1/index.html#proximity",
+    "title": "Introduction to Data Visualisation",
+    "section": "Proximity",
+    "text": "Proximity\nWe perceive objects close to each other as belonging to a group."
+  },
+  {
+    "objectID": "week1/index.html#similarity",
+    "href": "week1/index.html#similarity",
+    "title": "Introduction to Data Visualisation",
+    "section": "Similarity",
+    "text": "Similarity\nOur brain group objects that share the same colour, shape, and direction"
+  },
+  {
+    "objectID": "week1/index.html#enclosure",
+    "href": "week1/index.html#enclosure",
+    "title": "Introduction to Data Visualisation",
+    "section": "Enclosure",
+    "text": "Enclosure\nWe perceive objects as belonging to a group when they are enclosed in a way that creates a boundary or border around them."
+  },
+  {
+    "objectID": "week1/index.html#closure",
+    "href": "week1/index.html#closure",
+    "title": "Introduction to Data Visualisation",
+    "section": "Closure",
+    "text": "Closure\nOur brains tend to complete missing parts in the picture."
+  },
+  {
+    "objectID": "week1/index.html#connectedness",
+    "href": "week1/index.html#connectedness",
+    "title": "Introduction to Data Visualisation",
+    "section": "Connectedness",
+    "text": "Connectedness\nWe perceive objects connected to each other as a single group."
+  },
+  {
+    "objectID": "week1/index.html#continuity",
+    "href": "week1/index.html#continuity",
+    "title": "Introduction to Data Visualisation",
+    "section": "Continuity",
+    "text": "Continuity\nHumans tendency is to see shapes as continuous to the greatest degree possible. The human eye/brain follows lines, curves or a sequence of shapes to create pathways."
+  },
+  {
+    "objectID": "week1/index.html#figure-and-ground",
+    "href": "week1/index.html#figure-and-ground",
+    "title": "Introduction to Data Visualisation",
+    "section": "Figure and Ground",
+    "text": "Figure and Ground\nHuman’s ability to visually differentiate between an object and its background.\nExample 1:\n\nExample 2: Click here: https://thiyangt.github.io/coviddashboard/"
+  },
+  {
+    "objectID": "week1/index.html#simplicity",
+    "href": "week1/index.html#simplicity",
+    "title": "Introduction to Data Visualisation",
+    "section": "Simplicity",
+    "text": "Simplicity\nThe law of simplicity indicates that our mind perceives everything in its simplest form."
+  },
+  {
+    "objectID": "week1/index.html#common-fate",
+    "href": "week1/index.html#common-fate",
+    "title": "Introduction to Data Visualisation",
+    "section": "Common fate",
+    "text": "Common fate\nWhen objects move in the same direction or at a similar pace, our brains automatically group them together. (eg: a flock of birds)\n\n\nNULL"
+  },
+  {
+    "objectID": "week1/index.html#exercise",
+    "href": "week1/index.html#exercise",
+    "title": "Introduction to Data Visualisation",
+    "section": "Exercise",
+    "text": "Exercise\nDraw a plot to show the relationship between Life Expectancy and Countries\n\nlibrary(gapminder)\nlibrary(tidyverse)\ngapminder |&gt;\n  filter(year == 2007, continent == \"Americas\") |&gt;\n  select(country, lifeExp)\n\n# A tibble: 25 × 2\n   country            lifeExp\n   &lt;fct&gt;                &lt;dbl&gt;\n 1 Argentina             75.3\n 2 Bolivia               65.6\n 3 Brazil                72.4\n 4 Canada                80.7\n 5 Chile                 78.6\n 6 Colombia              72.9\n 7 Costa Rica            78.8\n 8 Cuba                  78.3\n 9 Dominican Republic    72.2\n10 Ecuador               75.0\n# ℹ 15 more rows"
+  },
+  {
+    "objectID": "week1/index.html#acknowledgement",
+    "href": "week1/index.html#acknowledgement",
+    "title": "Introduction to Data Visualisation",
+    "section": "Acknowledgement",
+    "text": "Acknowledgement\n\nKirk, A. (2016). Data visualisation: a handbook for data driven design\nGestalt Laws Applied to Data Visualization, https://daydreamingnumbers.com/"
+  },
+  {
+    "objectID": "week3/index.html#packages",
+    "href": "week3/index.html#packages",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(ggplot2)\nlibrary(tibble)\n# install.packages(\"devtools\")\n#devtools::install_github(\"thiyangt/elephants\")\nlibrary(elephants)\n#devtools::install_github(\"thiyangt/drone\")\nlibrary(drone)"
+  },
+  {
+    "objectID": "week3/index.html#data",
+    "href": "week3/index.html#data",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Data",
+    "text": "Data\n\nelephants\n\n# A tibble: 1,700 × 9\n   Category Age_Category Gender Flank_Girth Heart_Girth Neck_Girth Weight Height\n   &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 African  less than 1… male          291.        239.       211.  1775.   2.46\n 2 African  less than 1… male          270.        331.       119.  1564.   2.28\n 3 African  less than 1… male          291.        275.       200.  2070.   2.56\n 4 African  less than 1… male          285.        253.       111.  1716.   2.33\n 5 African  less than 1… male          184.        389.       180.  2736.   2.38\n 6 African  less than 1… male          235.        284.       158.  1773.   2.2 \n 7 African  less than 1… male          265.        262.       161.  1651.   2.68\n 8 African  less than 1… male          226.        226.       123.  2053.   2.67\n 9 African  less than 1… male          266.        290.       191.  2159.   2.63\n10 African  less than 1… male          163.        332.       172.  2075.   2.12\n# ℹ 1,690 more rows\n# ℹ 1 more variable: Fore_Feet_Circumference &lt;dbl&gt;\n\n\n\ndata(\"worldbankdata\")\nworldbankdata\n\n# A tibble: 7,937 × 7\n   Country Code  Region                     Year Cooking Electricity Income\n   &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;                     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt; \n 1 Aruba   ABW   Latin America & Caribbean  1990      NA       100   H     \n 2 Aruba   ABW   Latin America & Caribbean  2000      NA        91.7 H     \n 3 Aruba   ABW   Latin America & Caribbean  2013      NA       100   H     \n 4 Aruba   ABW   Latin America & Caribbean  2014      NA       100   H     \n 5 Aruba   ABW   Latin America & Caribbean  2015      NA       100   H     \n 6 Aruba   ABW   Latin America & Caribbean  2016      NA       100   H     \n 7 Aruba   ABW   Latin America & Caribbean  2017      NA       100   H     \n 8 Aruba   ABW   Latin America & Caribbean  2018      NA       100   H     \n 9 Aruba   ABW   Latin America & Caribbean  2019      NA       100   H     \n10 Aruba   ABW   Latin America & Caribbean  2020      NA       100   H     \n# ℹ 7,927 more rows"
+  },
+  {
+    "objectID": "week3/index.html#section",
+    "href": "week3/index.html#section",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "#install.packages(\"GGally\")\nlibrary(GGally)\nggpairs(elephants)"
+  },
+  {
+    "objectID": "week3/index.html#section-1",
+    "href": "week3/index.html#section-1",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 3, 4))"
+  },
+  {
+    "objectID": "week3/index.html#section-2",
+    "href": "week3/index.html#section-2",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9))"
+  },
+  {
+    "objectID": "week3/index.html#section-3",
+    "href": "week3/index.html#section-3",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender))"
+  },
+  {
+    "objectID": "week3/index.html#section-4",
+    "href": "week3/index.html#section-4",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\")"
+  },
+  {
+    "objectID": "week3/index.html#section-5",
+    "href": "week3/index.html#section-5",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\")"
+  },
+  {
+    "objectID": "week3/index.html#section-6",
+    "href": "week3/index.html#section-6",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()"
+  },
+  {
+    "objectID": "week3/index.html#section-7",
+    "href": "week3/index.html#section-7",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()\n\n\nYour turn: Fix aspect ratio of the plots."
+  },
+  {
+    "objectID": "week3/index.html#beware",
+    "href": "week3/index.html#beware",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Beware!",
+    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + coord_fixed(ratio=ar)"
+  },
+  {
+    "objectID": "week3/index.html#beware-1",
+    "href": "week3/index.html#beware-1",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Beware!",
+    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme(aspect.ratio = ar)"
+  },
+  {
+    "objectID": "week3/index.html#section-11",
+    "href": "week3/index.html#section-11",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(patchwork)\np1+p2"
+  },
+  {
+    "objectID": "week3/index.html#section-12",
+    "href": "week3/index.html#section-12",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(cowplot)\nplot_grid(p1, p2, labels = c('A', 'B'), label_size = 12)"
+  },
+  {
+    "objectID": "week3/index.html#section-13",
+    "href": "week3/index.html#section-13",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(ggstatsplot)\nggbetweenstats(\n  data  = elephants,\n  x     = Gender,\n  y     = Height,\n  title = \"Distribution of height by gender\"\n)"
+  },
+  {
+    "objectID": "week3/index.html#section-14",
+    "href": "week3/index.html#section-14",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "To visualize the distribution of a single variable and check if its mean is significantly different from a specified value with a one-sample test\n\ngghistostats(\n  data       = elephants,\n  x          = Height,\n  title      = \"Height of Elephants\",\n  test.value = 2.5,\n  binwidth   = 0.5\n)"
+  },
+  {
+    "objectID": "week3/index.html#section-15",
+    "href": "week3/index.html#section-15",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "library(\"ggpubr\")\ngghistogram(elephants, x = \"Height\",\n   add = \"mean\", rug = TRUE,\n   color = \"Gender\", fill = \"Gender\",\n   palette = c( \"#e7298a\",\"#081d58\"))"
+  },
+  {
+    "objectID": "week3/index.html#section-16",
+    "href": "week3/index.html#section-16",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "",
+    "text": "ggboxplot(elephants, y = \"Height\", x=\"Gender\",\n   color = \"Gender\",\n   palette = c( \"#e7298a\",\"#081d58\"),\n   add = \"jitter\", shape = \"Gender\")"
+  },
+  {
+    "objectID": "week3/index.html#in-class-demo",
+    "href": "week3/index.html#in-class-demo",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "In-class demo",
+    "text": "In-class demo\nlibrary(\"esquisse\")\nesquisse::esquisser(elephants::elephants)"
+  },
+  {
+    "objectID": "week3/index.html#task-1",
+    "href": "week3/index.html#task-1",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Task 1",
+    "text": "Task 1"
+  },
+  {
+    "objectID": "week3/index.html#task-2",
+    "href": "week3/index.html#task-2",
+    "title": "Beyond Basics: Elevate Your Plots",
+    "section": "Task 2",
+    "text": "Task 2\n\nlibrary(drone)\nggplot(worldbankdata, aes(x=Cooking, y=Electricity, col=Region)) + geom_point()"
   }
 ]
