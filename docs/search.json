@@ -175,6 +175,13 @@
     "text": "Change label format\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_point() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%b-%y\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\")"
   },
   {
+    "objectID": "week5/index.html#area-chart",
+    "href": "week5/index.html#area-chart",
+    "title": "Time Series Visualisation",
+    "section": "Area chart",
+    "text": "Area chart\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_area() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%b-%y\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\")"
+  },
+  {
     "objectID": "week5/index.html#seasonal-plot",
     "href": "week5/index.html#seasonal-plot",
     "title": "Time Series Visualisation",
@@ -194,6 +201,13 @@
     "title": "Time Series Visualisation",
     "section": "Add points",
     "text": "Add points\n\nlibrary(viridis)\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\",  pal = scales::viridis_pal()(15))  + geom_point()"
+  },
+  {
+    "objectID": "week5/index.html#polar-coordinate",
+    "href": "week5/index.html#polar-coordinate",
+    "title": "Time Series Visualisation",
+    "section": "Polar Coordinate",
+    "text": "Polar Coordinate\n\nlibrary(viridis)\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\",  pal = scales::viridis_pal()(15), polar=TRUE)  + geom_point()"
   },
   {
     "objectID": "week5/index.html#your-turn-1",

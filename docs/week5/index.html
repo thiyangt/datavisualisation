@@ -2030,167 +2030,201 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section>
 <section id="data-visualisation" class="title-slide slide level1 center">
 <h1>Data Visualisation</h1>
-
-</section>
-<section id="method-1" class="slide level2">
-<h2>Method 1</h2>
 <div class="cell" style="font-size: 20px;">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>ggts <span class="ot">&lt;-</span> ts.earnings <span class="sc">|&gt;</span></span>
 <span id="cb36-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Earnings)) <span class="sc">+</span></span>
-<span id="cb36-3"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb36-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>)  </span>
 <span id="cb36-5"><a></a>ggts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
-<section id="method-2" class="slide level2">
-<h2>Method 2</h2>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"><p>Is it easy to identify the overall patterns?</p>
+</section>
+<section id="method-1" class="slide level2">
+<h2>Method 1</h2>
 <div class="cell" style="font-size: 20px;">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">library</span>(feasts)</span>
-<span id="cb37-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
-<span id="cb37-3"><a></a>  <span class="fu">autoplot</span>(Earnings) <span class="sc">+</span></span>
-<span id="cb37-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>ggts <span class="ot">&lt;-</span> ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb37-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Earnings)) <span class="sc">+</span></span>
+<span id="cb37-3"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb37-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>)  </span>
+<span id="cb37-5"><a></a>ggts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
-<section id="customize-y-axis" class="slide level2">
-<h2>Customize Y axis</h2>
+<section id="method-2" class="slide level2">
+<h2>Method 2</h2>
 <div class="cell" style="font-size: 20px;">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
-<span id="cb38-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
-<span id="cb38-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Earnings)) <span class="sc">+</span></span>
-<span id="cb38-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb38-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span> </span>
-<span id="cb38-6"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">library</span>(feasts)</span>
+<span id="cb38-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb38-3"><a></a>  <span class="fu">autoplot</span>(Earnings) <span class="sc">+</span></span>
+<span id="cb38-4"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
-<section id="customize-y-axis-cont." class="slide level2">
-<h2>Customize Y axis (cont.)</h2>
+<section id="customize-y-axis" class="slide level2">
+<h2>Customize Y axis</h2>
 <div class="cell" style="font-size: 20px;">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
 <span id="cb39-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
 <span id="cb39-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Earnings)) <span class="sc">+</span></span>
 <span id="cb39-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb39-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span> </span>
-<span id="cb39-6"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb39-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-6"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
-<section id="customize-y-axis-cont.-1" class="slide level2">
+<section id="customize-y-axis-cont." class="slide level2">
 <h2>Customize Y axis (cont.)</h2>
 <div class="cell" style="font-size: 20px;">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
 <span id="cb40-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
 <span id="cb40-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Earnings)) <span class="sc">+</span></span>
 <span id="cb40-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb40-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"6 months"</span>, <span class="at">date_labels =</span> <span class="st">"%b-%y"</span>) <span class="sc">+</span> </span>
+<span id="cb40-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span> </span>
 <span id="cb40-6"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb40-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
-<section id="add-geom_point" class="slide level2">
-<h2>Add geom_point</h2>
+<section id="customize-y-axis-cont.-1" class="slide level2">
+<h2>Customize Y axis (cont.)</h2>
 <div class="cell" style="font-size: 20px;">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
 <span id="cb41-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
 <span id="cb41-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Earnings)) <span class="sc">+</span></span>
 <span id="cb41-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb41-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb41-6"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>) <span class="sc">+</span> </span>
-<span id="cb41-7"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb41-8"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"6 months"</span>, <span class="at">date_labels =</span> <span class="st">"%b-%y"</span>) <span class="sc">+</span> </span>
+<span id="cb41-6"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb41-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
-<section id="add-geom_point-using-autoplot" class="slide level2">
-<h2>Add geom_point: using autoplot</h2>
+<section id="add-geom_point" class="slide level2">
+<h2>Add geom_point</h2>
 <div class="cell" style="font-size: 20px;">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
 <span id="cb42-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
-<span id="cb42-3"><a></a>  <span class="fu">autoplot</span>(Earnings) <span class="sc">+</span> </span>
-<span id="cb42-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb42-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>) <span class="sc">+</span> </span>
-<span id="cb42-6"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb42-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Earnings)) <span class="sc">+</span></span>
+<span id="cb42-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb42-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb42-6"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>) <span class="sc">+</span> </span>
+<span id="cb42-7"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb42-8"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
-<section id="change-label-format" class="slide level2">
-<h2>Change label format</h2>
+<section id="add-geom_point-using-autoplot" class="slide level2">
+<h2>Add geom_point: using autoplot</h2>
 <div class="cell" style="font-size: 20px;">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
 <span id="cb43-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
 <span id="cb43-3"><a></a>  <span class="fu">autoplot</span>(Earnings) <span class="sc">+</span> </span>
 <span id="cb43-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb43-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>,  <span class="at">date_labels =</span> <span class="st">"%b-%y"</span>) <span class="sc">+</span> </span>
+<span id="cb43-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>) <span class="sc">+</span> </span>
 <span id="cb43-6"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb43-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
-<section id="seasonal-plot" class="slide level2">
-<h2>Seasonal plot</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">library</span>(viridis)</span>
-<span id="cb44-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
-<span id="cb44-3"><a></a>  <span class="fu">gg_season</span>(Earnings, <span class="at">period =</span> <span class="st">"1 year"</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="change-label-format" class="slide level2">
+<h2>Change label format</h2>
+<div class="cell" style="font-size: 20px;">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb44-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
+<span id="cb44-3"><a></a>  <span class="fu">autoplot</span>(Earnings) <span class="sc">+</span> </span>
+<span id="cb44-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb44-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>,  <span class="at">date_labels =</span> <span class="st">"%b-%y"</span>) <span class="sc">+</span> </span>
+<span id="cb44-6"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb44-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section>
-<section id="change-colour" class="slide level2">
-<h2>Change colour</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">library</span>(viridis)</span>
-<span id="cb45-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
-<span id="cb45-3"><a></a>  <span class="fu">gg_season</span>(Earnings, <span class="at">period =</span> <span class="st">"1 year"</span>,  <span class="at">pal =</span> scales<span class="sc">::</span><span class="fu">viridis_pal</span>()(<span class="dv">15</span>))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="section-7" class="slide level2">
+<h2></h2>
 
-</div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
-<section id="add-points" class="slide level2">
-<h2>Add points</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">library</span>(viridis)</span>
-<span id="cb46-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
-<span id="cb46-3"><a></a>  <span class="fu">gg_season</span>(Earnings, <span class="at">period =</span> <span class="st">"1 year"</span>,  <span class="at">pal =</span> scales<span class="sc">::</span><span class="fu">viridis_pal</span>()(<span class="dv">15</span>))  <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<img data-src="label.png" width="630" class="r-stretch"></section>
+<section id="area-chart" class="slide level2">
+<h2>Area chart</h2>
+<div class="cell" style="font-size: 20px;">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb45-2"><a></a>    <span class="fu">mutate</span>(<span class="at">Time =</span> <span class="fu">as_date</span>(<span class="fu">yearmonth</span>(Time))) <span class="sc">|&gt;</span></span>
+<span id="cb45-3"><a></a>  <span class="fu">autoplot</span>(Earnings) <span class="sc">+</span> </span>
+<span id="cb45-4"><a></a>  <span class="fu">geom_area</span>() <span class="sc">+</span> </span>
+<span id="cb45-5"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>,  <span class="at">date_labels =</span> <span class="st">"%b-%y"</span>) <span class="sc">+</span> </span>
+<span id="cb45-6"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb45-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Earnings from tourism (USD Mn)"</span>, <span class="at">x=</span><span class="st">"Time"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" width="960" class="r-stretch"></section>
+<section id="seasonal-plot" class="slide level2">
+<h2>Seasonal plot</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">library</span>(viridis)</span>
+<span id="cb46-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb46-3"><a></a>  <span class="fu">gg_season</span>(Earnings, <span class="at">period =</span> <span class="st">"1 year"</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+<section id="change-colour" class="slide level2">
+<h2>Change colour</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">library</span>(viridis)</span>
+<span id="cb47-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb47-3"><a></a>  <span class="fu">gg_season</span>(Earnings, <span class="at">period =</span> <span class="st">"1 year"</span>,  <span class="at">pal =</span> scales<span class="sc">::</span><span class="fu">viridis_pal</span>()(<span class="dv">15</span>))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+<section id="add-points" class="slide level2">
+<h2>Add points</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">library</span>(viridis)</span>
+<span id="cb48-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb48-3"><a></a>  <span class="fu">gg_season</span>(Earnings, <span class="at">period =</span> <span class="st">"1 year"</span>,  <span class="at">pal =</span> scales<span class="sc">::</span><span class="fu">viridis_pal</span>()(<span class="dv">15</span>))  <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
+<section id="polar-coordinate" class="slide level2">
+<h2>Polar Coordinate</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="fu">library</span>(viridis)</span>
+<span id="cb49-2"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb49-3"><a></a>  <span class="fu">gg_season</span>(Earnings, <span class="at">period =</span> <span class="st">"1 year"</span>,  <span class="at">pal =</span> scales<span class="sc">::</span><span class="fu">viridis_pal</span>()(<span class="dv">15</span>), <span class="at">polar=</span><span class="cn">TRUE</span>)  <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section>
 <section id="your-turn-1" class="slide level2">
 <h2>Your turn</h2>
 <p>Obtain this graph using <code>ggplot2</code> functions.</p>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"></section>
 <section id="seasonal-sub-series-plot" class="slide level2">
 <h2>Seasonal sub series plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
-<span id="cb47-2"><a></a>  <span class="fu">gg_subseries</span>(Earnings)  <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb50-2"><a></a>  <span class="fu">gg_subseries</span>(Earnings)  <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section>
 <section id="your-turn-2" class="slide level2">
 <h2>Your turn</h2>
 <p>Obtain the graph using <code>ggplot2</code> functions.</p>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section>
 <section id="lag-plots" class="slide level2">
 <h2>Lag plots</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
-<span id="cb48-2"><a></a><span class="fu">gg_lag</span>(Earnings, <span class="at">geom =</span> <span class="st">"point"</span>) <span class="sc">+</span></span>
-<span id="cb48-3"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"lag(Earnings)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>ts.earnings <span class="sc">|&gt;</span></span>
+<span id="cb51-2"><a></a><span class="fu">gg_lag</span>(Earnings, <span class="at">geom =</span> <span class="st">"point"</span>) <span class="sc">+</span></span>
+<span id="cb51-3"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"lag(Earnings)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-39-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2255,9 +2289,9 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section id="converting-to-tsibble" class="slide level2">
 <h2>Converting to tsibble</h2>
 <div class="cell" style="font-size: 40px;">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>cts.tsibble <span class="ot">&lt;-</span> cts <span class="sc">|&gt;</span></span>
-<span id="cb51-2"><a></a><span class="fu">as_tsibble</span>(<span class="at">index=</span>year, <span class="at">key=</span>Type)</span>
-<span id="cb51-3"><a></a>cts.tsibble</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>cts.tsibble <span class="ot">&lt;-</span> cts <span class="sc">|&gt;</span></span>
+<span id="cb54-2"><a></a><span class="fu">as_tsibble</span>(<span class="at">index=</span>year, <span class="at">key=</span>Type)</span>
+<span id="cb54-3"><a></a>cts.tsibble</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 64 x 3 [1Y]
 # Key:       Type [4]
@@ -2280,11 +2314,11 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <section id="multiple-time-series-plot" class="slide level2">
 <h2>Multiple time series plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
-<span id="cb53-2"><a></a><span class="fu">autoplot</span>(Counts) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
+<span id="cb56-2"><a></a><span class="fu">autoplot</span>(Counts) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-39-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"></section>
 <section id="your-turn-3" class="slide level2">
 <h2>Your turn</h2>
 <ol type="1">
@@ -2292,31 +2326,31 @@ Dr.&nbsp;Thiyanga S. Talagala <br> Department of Statistics, Faculty of Applied 
 <li><p>Draw the plot using <code>ggplot2</code> functions.</p></li>
 </ol>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-40-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section>
 <section id="faceting" class="slide level2">
 <h2>Faceting</h2>
 <div class="cell" style="font-size: 40px;">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
-<span id="cb54-2"><a></a><span class="fu">autoplot</span>(Counts) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Type), )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
+<span id="cb57-2"><a></a><span class="fu">autoplot</span>(Counts) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Type), )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-41-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-45-1.png" width="960" class="r-stretch"></section>
 <section id="free-scales" class="slide level2">
 <h2>Free scales</h2>
 <div class="cell" style="font-size: 40px;">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
-<span id="cb55-2"><a></a><span class="fu">autoplot</span>(Counts) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Type), <span class="at">scales=</span><span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
+<span id="cb58-2"><a></a><span class="fu">autoplot</span>(Counts) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Type), <span class="at">scales=</span><span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-42-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-46-1.png" width="960" class="r-stretch"></section>
 <section id="legend-position" class="slide level2">
 <h2>Legend position</h2>
 <div class="cell" style="font-size: 40px;">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
-<span id="cb56-2"><a></a><span class="fu">autoplot</span>(Counts) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Type), <span class="at">scales=</span><span class="st">"free"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>cts.tsibble <span class="sc">|&gt;</span></span>
+<span id="cb59-2"><a></a><span class="fu">autoplot</span>(Counts) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Type), <span class="at">scales=</span><span class="st">"free"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"><p>Your turn: Improve the graph by customizing the axis labels and tick marks.</p>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-47-1.png" width="960" class="r-stretch"><p>Your turn: Improve the graph by customizing the axis labels and tick marks.</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

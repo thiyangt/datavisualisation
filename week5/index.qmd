@@ -208,6 +208,18 @@ Help: <https://otexts.com/fpp3/tsibbles.html>
 
 # Data Visualisation
 
+```{r}
+#| echo: true
+#| style: "font-size: 20px;"
+ggts <- ts.earnings |>
+  ggplot(aes(x = Time, y = Earnings)) +
+  geom_point() +
+  labs(y = "Earnings from tourism (USD Mn)", x="Time")  
+ggts
+```
+
+Is it easy to identify the overall patterns?
+
 ## Method 1
 
 ```{r}
@@ -315,6 +327,26 @@ ts.earnings |>
   labs(y = "Earnings from tourism (USD Mn)", x="Time") 
 ```
 
+##
+
+```{r}
+knitr::include_graphics("label.png")
+```
+
+## Area chart
+
+```{r}
+#| echo: true
+#| style: "font-size: 20px;"
+ts.earnings |>
+    mutate(Time = as_date(yearmonth(Time))) |>
+  autoplot(Earnings) + 
+  geom_area() + 
+  scale_x_date(date_breaks = "1 year",  date_labels = "%b-%y") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(y = "Earnings from tourism (USD Mn)", x="Time") 
+```
+
 ## Seasonal plot
 
 ```{r}
@@ -345,6 +377,16 @@ ts.earnings |>
   
 ```
 
+## Polar Coordinate
+
+```{r}
+#| echo: true
+library(viridis)
+ts.earnings |>
+  gg_season(Earnings, period = "1 year",  pal = scales::viridis_pal()(15), polar=TRUE)  + geom_point() 
+  
+```
+
 ## Your turn
 
 Obtain this graph using `ggplot2` functions.
@@ -368,7 +410,6 @@ ts.earnings |>
 
 Obtain the graph using `ggplot2` functions.
 
-
 ```{r}
 ts.earnings |>
   gg_subseries(Earnings)  + geom_point() 
@@ -377,10 +418,8 @@ ts.earnings |>
 
 ## Lag plots
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 ```{r}
 #| eval: FALSE
 #| echo: TRUE
@@ -389,24 +428,17 @@ gg_lag(Earnings, geom = "point") +
   labs(x = "lag(Earnings)")
   
 ```
-
 :::
-  
-::: {.column width="50%"}
 
+::: {.column width="50%"}
 ```{r, fig.height=10, fig.width=10}
 ts.earnings |>
 gg_lag(Earnings, geom = "point") +
   labs(x = "lag(Earnings)")
   
 ```
-
-
 :::
-  
-
-  
-::::
+:::
 
 # Multiple time series
 
@@ -441,19 +473,17 @@ cts.tsibble
 
 ## Multiple time series plot
 
-
 ```{r}
 #| echo: true
 cts.tsibble |>
 autoplot(Counts) 
 ```
 
-
 ## Your turn
 
-1. Customize X-axis
+1.  Customize X-axis
 
-2. Draw the plot using `ggplot2` functions.
+2.  Draw the plot using `ggplot2` functions.
 
 ```{r}
   #| echo: true
