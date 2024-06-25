@@ -39,7 +39,7 @@ df |> knitr::kable()
 
 ## Datasets
 
-1. Pedestrian counts in Melbourne city
+1.  Pedestrian counts in Melbourne city
 
 ```r
 library(sugrrants)

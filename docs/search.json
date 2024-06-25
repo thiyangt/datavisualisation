@@ -1,47 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
-    "section": "",
-    "text": "Dr Thiyanga S. Talagala"
-  },
-  {
-    "objectID": "index.html#lecturer-in-charge",
-    "href": "index.html#lecturer-in-charge",
-    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
-    "section": "",
-    "text": "Dr Thiyanga S. Talagala"
-  },
-  {
-    "objectID": "index.html#email",
-    "href": "index.html#email",
-    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
-    "section": "Email:",
-    "text": "Email:\nttatalagala@sjp.ac.lk"
-  },
-  {
-    "objectID": "index.html#course-outline",
-    "href": "index.html#course-outline",
-    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
-    "section": "Course outline:",
-    "text": "Course outline:\nAvailable on LMS"
-  },
-  {
-    "objectID": "index.html#policies-and-regulations",
-    "href": "index.html#policies-and-regulations",
-    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
-    "section": "Policies and regulations:",
-    "text": "Policies and regulations:\nTo access important information regarding the unit, please go to the course Learning Management System (LMS) page. Click here to go directly to the LMS."
-  },
-  {
-    "objectID": "index.html#weekly-schedule",
-    "href": "index.html#weekly-schedule",
-    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
-    "section": "Weekly Schedule:",
-    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3/4\nMay 21, 2024/ May 28, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone\n\n\n5\nJune 4, 2024\nVisualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)\n\n\nNone\n\n\n6\nJune 11, 2024\nVisualising Distributions\nThe Data Visualisation Catalogue - Distributions\nVisualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/\n\n\n\n7\nJune 18, 2024\nTime series visualisation - part 1\nChapter 2: Time Series Graphics\ndenguedatahub::srilanka_weekly_data - visualise the data\n\n\n\n8\nJune 25, 2024\nFeature-based time series visualisation\n\nVisualising pedestrian counts in Melbourne city"
-  },
-  {
     "objectID": "week5/index.html#packages",
     "href": "week5/index.html#packages",
     "title": "Time Series Visualisation",
@@ -200,42 +158,35 @@
     "href": "week5/index.html#add-geom_point",
     "title": "Time Series Visualisation",
     "section": "Add geom_point",
-    "text": "Add geom_point\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  ggplot(aes(x = Time, y = Earnings)) +\n  geom_line() +\n  geom_point() + \n  scale_x_date(date_breaks = \"1 year\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\") \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Add geom_point\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  ggplot(aes(x = Time, y = Earnings)) +\n  geom_line() +\n  geom_point() + \n  scale_x_date(date_breaks = \"1 year\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\")"
   },
   {
     "objectID": "week5/index.html#add-geom_point-using-autoplot",
     "href": "week5/index.html#add-geom_point-using-autoplot",
     "title": "Time Series Visualisation",
     "section": "Add geom_point: using autoplot",
-    "text": "Add geom_point: using autoplot\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_point() + \n  scale_x_date(date_breaks = \"1 year\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\") \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Add geom_point: using autoplot\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_point() + \n  scale_x_date(date_breaks = \"1 year\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\")"
   },
   {
     "objectID": "week5/index.html#change-label-format",
     "href": "week5/index.html#change-label-format",
     "title": "Time Series Visualisation",
     "section": "Change label format",
-    "text": "Change label format\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_point() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%b-%y\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\") \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
-  },
-  {
-    "objectID": "week5/index.html#section-7",
-    "href": "week5/index.html#section-7",
-    "title": "Time Series Visualisation",
-    "section": "",
-    "text": "knitr::include_graphics(\"label.png\")"
+    "text": "Change label format\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_point() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%b-%y\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\")"
   },
   {
     "objectID": "week5/index.html#area-chart",
     "href": "week5/index.html#area-chart",
     "title": "Time Series Visualisation",
     "section": "Area chart",
-    "text": "Area chart\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_area() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%b-%y\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\") \n\nWarning: Removed 8 rows containing non-finite outside the scale range\n(`stat_align()`)."
+    "text": "Area chart\n\nts.earnings |&gt;\n    mutate(Time = as_date(yearmonth(Time))) |&gt;\n  autoplot(Earnings) + \n  geom_area() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%b-%y\") + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +\n  labs(y = \"Earnings from tourism (USD Mn)\", x=\"Time\")"
   },
   {
     "objectID": "week5/index.html#seasonal-plot",
     "href": "week5/index.html#seasonal-plot",
     "title": "Time Series Visualisation",
     "section": "Seasonal plot",
-    "text": "Seasonal plot\n\nlibrary(viridis)\n\nLoading required package: viridisLite\n\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\")"
+    "text": "Seasonal plot\n\nlibrary(viridis)\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\")"
   },
   {
     "objectID": "week5/index.html#change-colour",
@@ -249,56 +200,56 @@
     "href": "week5/index.html#add-points",
     "title": "Time Series Visualisation",
     "section": "Add points",
-    "text": "Add points\n\nlibrary(viridis)\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\",  pal = scales::viridis_pal()(15))  + geom_point() \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Add points\n\nlibrary(viridis)\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\",  pal = scales::viridis_pal()(15))  + geom_point()"
   },
   {
     "objectID": "week5/index.html#polar-coordinate",
     "href": "week5/index.html#polar-coordinate",
     "title": "Time Series Visualisation",
     "section": "Polar Coordinate",
-    "text": "Polar Coordinate\n\nlibrary(viridis)\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\",  pal = scales::viridis_pal()(15), polar=TRUE)  + geom_point() \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Polar Coordinate\n\nlibrary(viridis)\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\",  pal = scales::viridis_pal()(15), polar=TRUE)  + geom_point()"
   },
   {
     "objectID": "week5/index.html#your-turn-1",
     "href": "week5/index.html#your-turn-1",
     "title": "Time Series Visualisation",
     "section": "Your turn",
-    "text": "Your turn\nObtain this graph using ggplot2 functions.\n\nts.earnings |&gt;\n  gg_season(Earnings, period = \"1 year\",  pal = scales::viridis_pal()(15))  + geom_point() \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Your turn\nObtain this graph using ggplot2 functions."
   },
   {
     "objectID": "week5/index.html#seasonal-sub-series-plot",
     "href": "week5/index.html#seasonal-sub-series-plot",
     "title": "Time Series Visualisation",
     "section": "Seasonal sub series plot",
-    "text": "Seasonal sub series plot\n\nts.earnings |&gt;\n  gg_subseries(Earnings)  + geom_point() \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Seasonal sub series plot\n\nts.earnings |&gt;\n  gg_subseries(Earnings)  + geom_point()"
   },
   {
     "objectID": "week5/index.html#your-turn-2",
     "href": "week5/index.html#your-turn-2",
     "title": "Time Series Visualisation",
     "section": "Your turn",
-    "text": "Your turn\nObtain the graph using ggplot2 functions.\n\nts.earnings |&gt;\n  gg_subseries(Earnings)  + geom_point() \n\nWarning: Removed 8 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Your turn\nObtain the graph using ggplot2 functions."
   },
   {
     "objectID": "week5/index.html#lag-plots",
     "href": "week5/index.html#lag-plots",
     "title": "Time Series Visualisation",
     "section": "Lag plots",
-    "text": "Lag plots\n\n\n\nts.earnings |&gt;\ngg_lag(Earnings, geom = \"point\") +\n  labs(x = \"lag(Earnings)\")\n\n\n\nts.earnings |&gt;\ngg_lag(Earnings, geom = \"point\") +\n  labs(x = \"lag(Earnings)\")\n\nWarning: Removed 8 rows containing missing values (gg_lag)."
+    "text": "Lag plots\n\n\n\nts.earnings |&gt;\ngg_lag(Earnings, geom = \"point\") +\n  labs(x = \"lag(Earnings)\")"
   },
   {
     "objectID": "week5/index.html#data-set",
     "href": "week5/index.html#data-set",
     "title": "Time Series Visualisation",
     "section": "Data set",
-    "text": "Data set\n\nlibrary(denguedatahub)\nchina_annual_data  \n\n# A tibble: 16 × 5\n    year dengue.cases.indigenous dengue.cases.imported counties.with.dengue.fe…¹\n   &lt;int&gt;                   &lt;dbl&gt;                 &lt;dbl&gt;                     &lt;dbl&gt;\n 1  2005                       0                    45                         0\n 2  2006                    1007                    46                        15\n 3  2007                     481                    56                        13\n 4  2008                      86                   134                        11\n 5  2009                     200                    73                         5\n 6  2010                     112                   119                        14\n 7  2011                      35                   113                         6\n 8  2012                     438                   149                        14\n 9  2013                    4263                   460                        36\n10  2014                   46034                   399                       160\n11  2015                    3044                  1083                        44\n12  2016                    1549                   675                        41\n13  2017                    4609                  2112                        76\n14  2018                    3801                  1266                       100\n15  2019                   15378                  5813                       266\n16  2020                     616                   158                         7\n# ℹ abbreviated name: ¹​counties.with.dengue.fever.indigenous\n# ℹ 1 more variable: counties.with.dengue.fever.imported &lt;dbl&gt;"
+    "text": "Data set\n\n\n# A tibble: 16 × 5\n    year dengue.cases.indigenous dengue.cases.imported counties.with.dengue.fe…¹\n   &lt;int&gt;                   &lt;dbl&gt;                 &lt;dbl&gt;                     &lt;dbl&gt;\n 1  2005                       0                    45                         0\n 2  2006                    1007                    46                        15\n 3  2007                     481                    56                        13\n 4  2008                      86                   134                        11\n 5  2009                     200                    73                         5\n 6  2010                     112                   119                        14\n 7  2011                      35                   113                         6\n 8  2012                     438                   149                        14\n 9  2013                    4263                   460                        36\n10  2014                   46034                   399                       160\n11  2015                    3044                  1083                        44\n12  2016                    1549                   675                        41\n13  2017                    4609                  2112                        76\n14  2018                    3801                  1266                       100\n15  2019                   15378                  5813                       266\n16  2020                     616                   158                         7\n# ℹ abbreviated name: ¹​counties.with.dengue.fever.indigenous\n# ℹ 1 more variable: counties.with.dengue.fever.imported &lt;dbl&gt;"
   },
   {
     "objectID": "week5/index.html#pre-processing-data",
     "href": "week5/index.html#pre-processing-data",
     "title": "Time Series Visualisation",
     "section": "Pre-processing data",
-    "text": "Pre-processing data\n\ncts &lt;- china_annual_data  |&gt;\npivot_longer(\ncols = 2:5,\nnames_to = \"Type\",\nvalues_to = \"Counts\")\ncts\n\n# A tibble: 64 × 3\n    year Type                                  Counts\n   &lt;int&gt; &lt;chr&gt;                                  &lt;dbl&gt;\n 1  2005 dengue.cases.indigenous                    0\n 2  2005 dengue.cases.imported                     45\n 3  2005 counties.with.dengue.fever.indigenous      0\n 4  2005 counties.with.dengue.fever.imported       33\n 5  2006 dengue.cases.indigenous                 1007\n 6  2006 dengue.cases.imported                     46\n 7  2006 counties.with.dengue.fever.indigenous     15\n 8  2006 counties.with.dengue.fever.imported       33\n 9  2007 dengue.cases.indigenous                  481\n10  2007 dengue.cases.imported                     56\n# ℹ 54 more rows"
+    "text": "Pre-processing data\n\n\n# A tibble: 64 × 3\n    year Type                                  Counts\n   &lt;int&gt; &lt;chr&gt;                                  &lt;dbl&gt;\n 1  2005 dengue.cases.indigenous                    0\n 2  2005 dengue.cases.imported                     45\n 3  2005 counties.with.dengue.fever.indigenous      0\n 4  2005 counties.with.dengue.fever.imported       33\n 5  2006 dengue.cases.indigenous                 1007\n 6  2006 dengue.cases.imported                     46\n 7  2006 counties.with.dengue.fever.indigenous     15\n 8  2006 counties.with.dengue.fever.imported       33\n 9  2007 dengue.cases.indigenous                  481\n10  2007 dengue.cases.imported                     56\n# ℹ 54 more rows"
   },
   {
     "objectID": "week5/index.html#converting-to-tsibble",
@@ -319,7 +270,7 @@
     "href": "week5/index.html#your-turn-3",
     "title": "Time Series Visualisation",
     "section": "Your turn",
-    "text": "Your turn\n\nCustomize X-axis\nDraw the plot using ggplot2 functions.\n\n\n  #| echo: true\n#| style: \"font-size: 40px;\"\ncts.tsibble |&gt;\nautoplot(Counts)"
+    "text": "Your turn\n\nCustomize X-axis\nDraw the plot using ggplot2 functions."
   },
   {
     "objectID": "week5/index.html#faceting",
@@ -340,21 +291,14 @@
     "href": "week5/index.html#legend-position",
     "title": "Time Series Visualisation",
     "section": "Legend position",
-    "text": "Legend position\n\ncts.tsibble |&gt;\nautoplot(Counts) + facet_wrap(vars(Type), scales=\"free\") + theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\nYour turn: Improve the graph by customizing the axis labels and tick marks."
-  },
-  {
-    "objectID": "week3/index.html",
-    "href": "week3/index.html",
-    "title": "Beyond Basics: Elevate Your Plots",
-    "section": "",
-    "text": "library(ggplot2)\nlibrary(tibble)\n# install.packages(\"devtools\")\n#devtools::install_github(\"thiyangt/elephants\")\nlibrary(elephants)\n#devtools::install_github(\"thiyangt/drone\")\nlibrary(drone)"
+    "text": "Legend position\n\ncts.tsibble |&gt;\nautoplot(Counts) + facet_wrap(vars(Type), scales=\"free\") + theme(legend.position = \"bottom\")\n\n\nYour turn: Improve the graph by customizing the axis labels and tick marks."
   },
   {
     "objectID": "week3/index.html#packages",
     "href": "week3/index.html#packages",
     "title": "Beyond Basics: Elevate Your Plots",
-    "section": "",
-    "text": "library(ggplot2)\nlibrary(tibble)\n# install.packages(\"devtools\")\n#devtools::install_github(\"thiyangt/elephants\")\nlibrary(elephants)\n#devtools::install_github(\"thiyangt/drone\")\nlibrary(drone)"
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(ggplot2)\nlibrary(tibble)\n# install.packages(\"devtools\")\n#devtools::install_github(\"thiyangt/elephants\")\nlibrary(elephants)\n#devtools::install_github(\"thiyangt/drone\")\nlibrary(drone)"
   },
   {
     "objectID": "week3/index.html#data",
@@ -368,70 +312,70 @@
     "href": "week3/index.html#section",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "#install.packages(\"GGally\")\nlibrary(GGally)\n\nRegistered S3 method overwritten by 'GGally':\n  method from   \n  +.gg   ggplot2\n\nggpairs(elephants)\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "#install.packages(\"GGally\")\nlibrary(GGally)\nggpairs(elephants)"
   },
   {
     "objectID": "week3/index.html#section-1",
     "href": "week3/index.html#section-1",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "ggpairs(elephants, columns = c(2, 3, 4))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "ggpairs(elephants, columns = c(2, 3, 4))"
   },
   {
     "objectID": "week3/index.html#section-2",
     "href": "week3/index.html#section-2",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "ggpairs(elephants, columns = c(2, 8, 9))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "ggpairs(elephants, columns = c(2, 8, 9))"
   },
   {
     "objectID": "week3/index.html#section-3",
     "href": "week3/index.html#section-3",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender))"
   },
   {
     "objectID": "week3/index.html#section-4",
     "href": "week3/index.html#section-4",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") \n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\")"
   },
   {
     "objectID": "week3/index.html#section-5",
     "href": "week3/index.html#section-5",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\")\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\")"
   },
   {
     "objectID": "week3/index.html#section-6",
     "href": "week3/index.html#section-6",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()"
   },
   {
     "objectID": "week3/index.html#section-7",
     "href": "week3/index.html#section-7",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\nYour turn: Fix aspect ratio of the plots."
+    "text": "ggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme_bw()\n\n\nYour turn: Fix aspect ratio of the plots."
   },
   {
     "objectID": "week3/index.html#beware",
     "href": "week3/index.html#beware",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "Beware!",
-    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + coord_fixed(ratio=ar)\n\nCoordinate system already present. Adding new coordinate system, which will\nreplace the existing one.\nCoordinate system already present. Adding new coordinate system, which will\nreplace the existing one.\nCoordinate system already present. Adding new coordinate system, which will\nreplace the existing one.\nCoordinate system already present. Adding new coordinate system, which will\nreplace the existing one.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + coord_fixed(ratio=ar)"
   },
   {
     "objectID": "week3/index.html#beware-1",
     "href": "week3/index.html#beware-1",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "Beware!",
-    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme(aspect.ratio = ar)\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Beware!\n\nggpairs(elephants, columns = c(2, 8, 9), mapping=aes(color=Gender, alpha=0.5)) + scale_color_brewer(palette = \"Dark2\") + scale_fill_brewer(palette = \"Dark2\") + theme(aspect.ratio = ar)"
   },
   {
     "objectID": "week3/index.html#section-11",
@@ -445,14 +389,14 @@
     "href": "week3/index.html#section-12",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "library(cowplot)\n\n\nAttaching package: 'cowplot'\n\n\nThe following object is masked from 'package:patchwork':\n\n    align_plots\n\nplot_grid(p1, p2, labels = c('A', 'B'), label_size = 12)"
+    "text": "library(cowplot)\nplot_grid(p1, p2, labels = c('A', 'B'), label_size = 12)"
   },
   {
     "objectID": "week3/index.html#section-13",
     "href": "week3/index.html#section-13",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "library(ggstatsplot)\n\nYou can cite this package as:\n     Patil, I. (2021). Visualizations with statistical details: The 'ggstatsplot' approach.\n     Journal of Open Source Software, 6(61), 3167, doi:10.21105/joss.03167\n\nggbetweenstats(\n  data  = elephants,\n  x     = Gender,\n  y     = Height,\n  title = \"Distribution of height by gender\"\n)"
+    "text": "library(ggstatsplot)\nggbetweenstats(\n  data  = elephants,\n  x     = Gender,\n  y     = Height,\n  title = \"Distribution of height by gender\"\n)"
   },
   {
     "objectID": "week3/index.html#section-14",
@@ -466,7 +410,7 @@
     "href": "week3/index.html#section-15",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "",
-    "text": "library(\"ggpubr\")\n\n\nAttaching package: 'ggpubr'\n\n\nThe following object is masked from 'package:cowplot':\n\n    get_legend\n\ngghistogram(elephants, x = \"Height\",\n   add = \"mean\", rug = TRUE,\n   color = \"Gender\", fill = \"Gender\",\n   palette = c( \"#e7298a\",\"#081d58\"))\n\nWarning: Using `bins = 30` by default. Pick better value with the argument\n`bins`."
+    "text": "library(\"ggpubr\")\ngghistogram(elephants, x = \"Height\",\n   add = \"mean\", rug = TRUE,\n   color = \"Gender\", fill = \"Gender\",\n   palette = c( \"#e7298a\",\"#081d58\"))"
   },
   {
     "objectID": "week3/index.html#section-16",
@@ -487,14 +431,14 @@
     "href": "week3/index.html#task-1",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "Task 1",
-    "text": "Task 1\n\nlibrary(elephants)\nggplot(data = elephants, aes(x=Age_Category)) + geom_bar() + facet_wrap(vars(Gender))"
+    "text": "Task 1"
   },
   {
     "objectID": "week3/index.html#task-2",
     "href": "week3/index.html#task-2",
     "title": "Beyond Basics: Elevate Your Plots",
     "section": "Task 2",
-    "text": "Task 2\n\nlibrary(drone)\nggplot(worldbankdata, aes(x=Cooking, y=Electricity, col=Region)) + geom_point()\n\nWarning: Removed 6051 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Task 2\n\nlibrary(drone)\nggplot(worldbankdata, aes(x=Cooking, y=Electricity, col=Region)) + geom_point()"
   },
   {
     "objectID": "week1/index.html#perceiving",
@@ -515,7 +459,7 @@
     "href": "week1/index.html#comprehending",
     "title": "Introduction to Data Visualisation",
     "section": "Comprehending",
-    "text": "Comprehending\n\nWhat does it mean to me?\n\n\nWhat does one do with this understanding?\nHave I learned something I did not know before?\nWas it confirmed I did not know before?\n\n\n\nPerceiving: What does it show?\n\n\nInterpreting: What does it mean?\n\n\nComprehending: What does it mean to me?"
+    "text": "Comprehending\n\nWhat does it mean to me?\n\n\nWhat does one do with this understanding?\nHave I learned something I did not know before?\nWas it confirmed I did not know before?"
   },
   {
     "objectID": "week1/index.html#exploratory-vs-explanatory",
@@ -578,21 +522,21 @@
     "href": "week1/index.html#closure",
     "title": "Introduction to Data Visualisation",
     "section": "Closure",
-    "text": "Closure\nOur brains tend to complete missing parts in the picture.\n\ntime &lt;- 2000:2020\ntime &lt;- lubridate::ymd(time, truncated = 2L)\nset.seed(5)\naa &lt;- rnorm(15, mean=50, sd=5)\nvalues &lt;- c(aa, NA, NA, NA, 50, 55, 60)\ndf &lt;- tibble::tibble(time, values)\nggplot(df, aes(x=time, y=values)) + geom_path() + geom_point() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%Y\") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Closure\nOur brains tend to complete missing parts in the picture."
   },
   {
     "objectID": "week1/index.html#connectedness",
     "href": "week1/index.html#connectedness",
     "title": "Introduction to Data Visualisation",
     "section": "Connectedness",
-    "text": "Connectedness\nWe perceive objects connected to each other as a single group.\n\ntime &lt;- 2000:2020\ntime &lt;- rep(lubridate::ymd(time, truncated = 2L), times= 2)\nset.seed(5)\naa &lt;- rnorm(15, mean=50, sd=5)\nvalues &lt;- c(aa, 59, 58, 57, 50, 55, 60)\nvalues &lt;- c(values, values+5)\ngroup &lt;- c(rep(1, 21), rep(2, 21))\ndf &lt;- tibble::tibble(time, values, group)\nggplot(df, aes(x=time, y=values)) +  geom_point() + \n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%Y\") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))\n\n\n\n\n\n\n\n\n\n\ntime &lt;- 2000:2020\ntime &lt;- rep(lubridate::ymd(time, truncated = 2L), times= 2)\nset.seed(5)\naa &lt;- rnorm(15, mean=50, sd=5)\nvalues &lt;- c(aa, 59, 58, 57, 50, 55, 60)\nvalues &lt;- c(values, values+5)\ngroup &lt;- c(rep(1, 21), rep(2, 21))\ndf &lt;- tibble::tibble(time, values, group)\nggplot(df, aes(x=time, y=values, group=group)) +  geom_point() + geom_line() +\n  scale_x_date(date_breaks = \"1 year\",  date_labels = \"%Y\") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))"
+    "text": "Connectedness\nWe perceive objects connected to each other as a single group."
   },
   {
     "objectID": "week1/index.html#continuity",
     "href": "week1/index.html#continuity",
     "title": "Introduction to Data Visualisation",
     "section": "Continuity",
-    "text": "Continuity\nHumans tendency is to see shapes as continuous to the greatest degree possible. The human eye/brain follows lines, curves or a sequence of shapes to create pathways.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nggplot(mpg) +\n    geom_bar(aes(x = class))"
+    "text": "Continuity\nHumans tendency is to see shapes as continuous to the greatest degree possible. The human eye/brain follows lines, curves or a sequence of shapes to create pathways."
   },
   {
     "objectID": "week1/index.html#figure-and-ground",
@@ -606,14 +550,14 @@
     "href": "week1/index.html#simplicity",
     "title": "Introduction to Data Visualisation",
     "section": "Simplicity",
-    "text": "Simplicity\nThe law of simplicity indicates that our mind perceives everything in its simplest form.\n\nlibrary(gganimate)\n\nNo renderer backend detected. gganimate will default to writing frames to separate files\nConsider installing:\n- the `gifski` package for gif output\n- the `av` package for video output\nand restarting the R session\n\np &lt;- ggplot(df, aes(x=time, y=values, group=group)) +\n  geom_line() +\n  geom_segment(aes(xend=max(time), yend = values), linetype=2, colour='blue') +\n  geom_point(size = 3) + \n  geom_text(aes(x = max(time)+.1, label = sprintf(\"%5.0f\", values)), hjust=0) +\n  transition_reveal(time) + \n  view_follow(fixed_y = TRUE)+\n  coord_cartesian(clip = 'off') + \n  enter_drift(x_mod = -1) + exit_drift(x_mod = 1) +\n  theme_bw() +\n  theme(panel.border = element_blank(),\n        panel.grid.major = element_blank(),\n        panel.grid.minor = element_blank(),\n        axis.line = element_line(colour = \"black\"),\n        plot.margin = margin(5.5, 40, 5.5, 5.5))\n    \nanimate(p, fps=5)\n\nWarning: No renderer available. Please install the gifski, av, or magick package to\ncreate animated output"
+    "text": "Simplicity\nThe law of simplicity indicates that our mind perceives everything in its simplest form."
   },
   {
     "objectID": "week1/index.html#common-fate",
     "href": "week1/index.html#common-fate",
     "title": "Introduction to Data Visualisation",
     "section": "Common fate",
-    "text": "Common fate\nWhen objects move in the same direction or at a similar pace, our brains automatically group them together. (eg: a flock of birds)\n\nlibrary(gapminder)\nlibrary(gganimate)\nggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  #facet_wrap(~continent) +\n  # Here comes the gganimate specific bits\n  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +\n  transition_time(year) +\n  ease_aes('linear')\n\nWarning: No renderer available. Please install the gifski, av, or magick package to\ncreate animated output\n\n\nNULL"
+    "text": "Common fate\nWhen objects move in the same direction or at a similar pace, our brains automatically group them together. (eg: a flock of birds)\n\n\nNULL"
   },
   {
     "objectID": "week1/index.html#exercise",
@@ -630,6 +574,62 @@
     "text": "Acknowledgement\n\nKirk, A. (2016). Data visualisation: a handbook for data driven design\nGestalt Laws Applied to Data Visualization, https://daydreamingnumbers.com/"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "",
+    "text": "Dr Thiyanga S. Talagala"
+  },
+  {
+    "objectID": "index.html#lecturer-in-charge",
+    "href": "index.html#lecturer-in-charge",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "",
+    "text": "Dr Thiyanga S. Talagala"
+  },
+  {
+    "objectID": "index.html#email",
+    "href": "index.html#email",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Email:",
+    "text": "Email:\nttatalagala@sjp.ac.lk"
+  },
+  {
+    "objectID": "index.html#course-outline",
+    "href": "index.html#course-outline",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Course outline:",
+    "text": "Course outline:\nAvailable on LMS"
+  },
+  {
+    "objectID": "index.html#policies-and-regulations",
+    "href": "index.html#policies-and-regulations",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Policies and regulations:",
+    "text": "Policies and regulations:\nTo access important information regarding the unit, please go to the course Learning Management System (LMS) page. Click here to go directly to the LMS."
+  },
+  {
+    "objectID": "index.html#weekly-schedule",
+    "href": "index.html#weekly-schedule",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Weekly Schedule:",
+    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3/4\nMay 21, 2024/ May 28, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone\n\n\n5\nJune 4, 2024\nVisualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)\n\n\nNone\n\n\n6\nJune 11, 2024\nVisualising Distributions\nThe Data Visualisation Catalogue - Distributions\nVisualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/\n\n\n\n7\nJune 18, 2024\nTime series visualisation - part 1\nChapter 2: Time Series Graphics\ndenguedatahub::srilanka_weekly_data - visualise the data\n\n\n\n8\nJune 25, 2024\nFeature-based time series visualisation\n\nVisualising pedestrian counts in Melbourne city"
+  },
+  {
+    "objectID": "index.html#datasets",
+    "href": "index.html#datasets",
+    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
+    "section": "Datasets",
+    "text": "Datasets\n\nPedestrian counts in Melbourne city\n\nlibrary(sugrrants)\ndata(hourly_peds)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
     "objectID": "week1/assignment1.html",
     "href": "week1/assignment1.html",
     "title": "STA 492 2.0/ASP 460 2.0 Data Visualisation",
@@ -637,18 +637,11 @@
     "text": "Due date:\n15 May 2024\nAssignment 1:\n10 marks\nTask:\n\nCapture a photograph demonstrating the application of Gestalt laws.\nExplain how the Gestalt principles were utilized in your photograph.\nYou can use any location to take your photograph.\nYou must document your work in an RMarkdown document. Your work should be fully reproducible. That means, you should submit your .Rmd file, .html file and any attachments. The best reports will be published on the course’s website.\n\nAcademic Integrity Notice:\nPlagiarism Policy: Reports found to be plagiarized will receive a score of 0 for the assignment."
   },
   {
-    "objectID": "week2/index.html",
-    "href": "week2/index.html",
-    "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "library(ggplot2)\nlibrary(palmerpenguins)"
-  },
-  {
     "objectID": "week2/index.html#packages-we-need-today",
     "href": "week2/index.html#packages-we-need-today",
     "title": "The Grammar of Graphics",
-    "section": "",
-    "text": "library(ggplot2)\nlibrary(palmerpenguins)"
+    "section": "Packages we need today",
+    "text": "Packages we need today\n\nlibrary(ggplot2)\nlibrary(palmerpenguins)"
   },
   {
     "objectID": "week2/index.html#pioneers",
@@ -690,35 +683,35 @@
     "href": "week2/index.html#data-aesthetics",
     "title": "The Grammar of Graphics",
     "section": "Data + Aesthetics",
-    "text": "Data + Aesthetics\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species))"
+    "text": "Data + Aesthetics"
   },
   {
     "objectID": "week2/index.html#data-aesthetics-geom",
     "href": "week2/index.html#data-aesthetics-geom",
     "title": "The Grammar of Graphics",
     "section": "Data + Aesthetics + Geom",
-    "text": "Data + Aesthetics + Geom\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point()\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_smooth()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_smooth(method=\"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`)."
+    "text": "Data + Aesthetics + Geom\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point()"
   },
   {
     "objectID": "week2/index.html#data-aesthetics-geom-facet",
     "href": "week2/index.html#data-aesthetics-geom-facet",
     "title": "The Grammar of Graphics",
     "section": "Data + Aesthetics + Geom + Facet",
-    "text": "Data + Aesthetics + Geom + Facet\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species, ncol=3)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species, nrow=3)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species, nrow=3, strip.position = \"left\") \n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Data + Aesthetics + Geom + Facet\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species)"
   },
   {
     "objectID": "week2/index.html#data-aesthetics-geom-facet-scale",
     "href": "week2/index.html#data-aesthetics-geom-facet-scale",
     "title": "The Grammar of Graphics",
     "section": "Data + Aesthetics + Geom + Facet + Scale",
-    "text": "Data + Aesthetics + Geom + Facet + Scale\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"#1b9e77\",\"#d95f02\",\"#7570b3\"))\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"#1b9e77\",\"red\",\"#7570b3\"))\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"Gentoo\"=\"#1b9e77\", \"Chinstrap\"=\"red\", \"Adelie\" = \"#7570b3\"))\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nRColorBrewer::display.brewer.all(type = \"div\")\n\n\n\n\n\n\n\n\n\n\nRColorBrewer::display.brewer.all(type = \"seq\")\n\n\n\n\n\n\n\n\n\n\nRColorBrewer::display.brewer.all(type = \"qual\")\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + facet_grid(species ~ island) + scale_color_brewer(palette = \"Dark2\")\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + facet_grid(species ~ island) +\nscale_color_manual(values = RColorBrewer::brewer.pal(n = 3, name = \"Set1\"))\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Data + Aesthetics + Geom + Facet + Scale\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"#1b9e77\",\"#d95f02\",\"#7570b3\"))"
   },
   {
     "objectID": "week2/index.html#data-aesthetics-geom-facet-stat",
     "href": "week2/index.html#data-aesthetics-geom-facet-stat",
     "title": "The Grammar of Graphics",
     "section": "Data + Aesthetics + Geom + Facet + Stat",
-    "text": "Data + Aesthetics + Geom + Facet + Stat\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) +\nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 7,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )\n\nWarning: The `fun.y` argument of `stat_summary()` is deprecated as of ggplot2 3.3.0.\nℹ Please use the `fun` argument instead.\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_summary()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 3,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_summary()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Data + Aesthetics + Geom + Facet + Stat\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) +\nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 7,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )"
   },
   {
     "objectID": "week4/index.html",
@@ -789,12 +782,5 @@
     "title": "Visualising Qualitative Data",
     "section": "Categorical with two Quantitative variables",
     "text": "Categorical with two Quantitative variables\nR code: ___________\n\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nR code: ___________\n\n\n\n\n\n\n\n\n\nYour turn: What is the best chart to visualize the relationship between the price, carat, and color of diamonds?"
-  },
-  {
-    "objectID": "index.html#datasets",
-    "href": "index.html#datasets",
-    "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
-    "section": "Datasets",
-    "text": "Datasets\n\nPedestrian counts in Melbourne city\n\nlibrary(sugrrants)\ndata(hourly_peds)"
   }
 ]
