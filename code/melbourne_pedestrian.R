@@ -100,6 +100,10 @@ subdat |>
   xlab("Date Time") +
   ylab("Hourly Counts")
 
+
+# A relatively persistent pattern
+# repeats from one week to another 
+# at Flagstaff Station. 
 ## ----------------------
 subdat |>
   ggplot(aes(x = Time, y = Hourly_Counts, group = Date, colour = Sensor_Name)) +
@@ -114,6 +118,8 @@ subdat |>
   xlab("Time") +
   ylab("Hourly Counts")
 
+# The focus is on time of day and day of 
+# week across the sensors.
 ## ----------------------
 ## FS:2016
 rdbu <- c("Work day" = "#d7191c", "Non-work day" = "#2c7bb6")
@@ -133,3 +139,6 @@ p_fs <- fs_cal |>
   scale_color_manual(values = rdbu) +
   theme(legend.position = "bottom")
 prettify(p_fs)
+
+## Sources
+#https://thesis.earo.me/2-1-introduction

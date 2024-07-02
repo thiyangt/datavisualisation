@@ -327,7 +327,7 @@ ts.earnings |>
   labs(y = "Earnings from tourism (USD Mn)", x="Time") 
 ```
 
-##
+## 
 
 ```{r}
 knitr::include_graphics("label.png")
