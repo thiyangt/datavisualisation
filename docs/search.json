@@ -242,7 +242,7 @@
     "href": "index.html#datasets",
     "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
     "section": "Datasets",
-    "text": "Datasets\n\nPedestrian counts in Melbourne city\n\nlibrary(sugrrants)\ndata(hourly_peds)"
+    "text": "Datasets\n\nPedestrian counts in Melbourne city\n\nlibrary(sugrrants)\ndata(hourly_peds)\n\nTickets issued for parking violations in the city of Philadelphia, Pennsylvania in 2017\n\nlibrary(tidyverse)\n\nphilly &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-03/tickets.csv\")"
   },
   {
     "objectID": "week1/index.html#perceiving",
@@ -816,6 +816,6 @@
     "href": "week5/index.html#legend-position",
     "title": "Time Series Visualisation",
     "section": "Legend position",
-    "text": "Legend position\n\ncts.tsibble |&gt;\nautoplot(Counts) + facet_wrap(vars(Type), scales=\"free\") + theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\nYour turn: Improve the graph by customizing the axis labels and tick marks."
+    "text": "Legend position\n\ncts.tsibble |&gt;\nautoplot(Counts) + facet_wrap(vars(Type), scales=\"free\") + theme(legend.position = \"bottom\")\n\n\nYour turn: Improve the graph by customizing the axis labels and tick marks."
   }
 ]
