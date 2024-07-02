@@ -128,7 +128,9 @@ fs <- subdat |>
   filter(Sensor_Name == "Flagstaff Station")
 
 fs_cal <- fs |>
-  frame_calendar(x = Time, y = Hourly_Counts, date = Date)
+  frame_calendar(x = Time, 
+                 y = Hourly_Counts,
+                 date = Date)
 
 p_fs <- fs_cal |>
   ggplot(aes(x = .Time,

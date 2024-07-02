@@ -235,7 +235,7 @@
     "href": "index.html#weekly-schedule",
     "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
     "section": "Weekly Schedule:",
-    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3/4\nMay 21, 2024/ May 28, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone\n\n\n5\nJune 4, 2024\nVisualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)\n\n\nNone\n\n\n6\nJune 11, 2024\nVisualising Distributions\nThe Data Visualisation Catalogue - Distributions\nVisualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/\n\n\n\n7\nJune 18, 2024\nTime series visualisation - part 1\nChapter 2: Time Series Graphics\ndenguedatahub::srilanka_weekly_data - visualise the data\n\n\n\n8\nJune 25, 2024\nFeature-based time series visualisation\n\nVisualising pedestrian counts in Melbourne city\n\n\n\n9\nJuly 2, 2024\nCreating dynamic dashboards with R"
+    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3/4\nMay 21, 2024/ May 28, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone\n\n\n5\nJune 4, 2024\nVisualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)\n\n\nNone\n\n\n6\nJune 11, 2024\nVisualising Distributions\nThe Data Visualisation Catalogue - Distributions\nVisualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/\n\n\n\n7\nJune 18, 2024\nTime series visualisation - part 1\nChapter 2: Time Series Graphics\ndenguedatahub::srilanka_weekly_data - visualise the data\n\n\n\n8\nJune 25, 2024\nFeature-based time series visualisation\n[Calendar-based graphics]https://pkg.earo.me/sugrrants/articles/frame-calendar.html\nVisualising pedestrian counts in Melbourne city\n\n\n\n9\nJuly 2, 2024\nCreating dynamic dashboards with R"
   },
   {
     "objectID": "index.html#datasets",
@@ -816,6 +816,6 @@
     "href": "week5/index.html#legend-position",
     "title": "Time Series Visualisation",
     "section": "Legend position",
-    "text": "Legend position\n\ncts.tsibble |&gt;\nautoplot(Counts) + facet_wrap(vars(Type), scales=\"free\") + theme(legend.position = \"bottom\")\n\n\nYour turn: Improve the graph by customizing the axis labels and tick marks."
+    "text": "Legend position\n\ncts.tsibble |&gt;\nautoplot(Counts) + facet_wrap(vars(Type), scales=\"free\") + theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\nYour turn: Improve the graph by customizing the axis labels and tick marks."
   }
 ]
