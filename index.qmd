@@ -22,12 +22,12 @@ To access important information regarding the unit, please go to the course Lear
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)
-wkno <- c(1, 2, "3/4", 5, 6, 7, 8, 9)
-date <- c("April 30, 2024", "May 14, 2024", "May 21, 2024/ May 28, 2024", "June 4, 2024", "June 11, 2024", "June 18, 2024", "June 25, 2024", "July 2, 2024")
-Topic <- c("[Introduction to Data Viualisation](./week1/index.html)", "[Grammar of Graphics](./week2/index.html)", "[Beyond Basics: Elevate Your Plots](./week3/index.html)", "[Visualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)](./week4/index.html)", "[Visualising Distributions](https://tstdataviz.netlify.app/slides/dis22#1)", "[Time series visualisation - part 1](./week5/index.html)", "[Feature-based time series visualisation](https://thiyangt.github.io/RLadiesMLTS/index.html#1)", "[Creating dynamic dashboards with R](https://thiyangt.github.io/coviddashboard/)")
-reading <- c("[Gestalt Law in Photography](https://www.creative-photographer.com/how-to-use-gestalt-theory-for-better-composition/)", "[ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/mastery)", "", "", "[The Data Visualisation Catalogue - Distributions](https://datavizcatalogue.com/search/distribution.html)", "[Chapter 2: Time Series Graphics](https://otexts.com/fpp3/graphics.html)", "[Calendar-based graphics]https://pkg.earo.me/sugrrants/articles/frame-calendar.html", "")
-exercise <- c("", "Perform an EDA on penguins dataset using ggplot2.", "Perform EDA on worldbank dataset.", "", "Visualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/", "denguedatahub::srilanka_weekly_data - visualise the data", "Visualising pedestrian counts in Melbourne city", "")
-assignments <- c("[Assignment 1](./week1/assignment1.html)", "None", "None", "None", "", "", "", "")
+wkno <- c(1, 2, "3/4", 5, 6, 7, 8, 9, 10)
+date <- c("April 30, 2024", "May 14, 2024", "May 21, 2024/ May 28, 2024", "June 4, 2024", "June 11, 2024", "June 18, 2024", "June 25, 2024", "July 2, 2024", "July 9, 2024")
+Topic <- c("[Introduction to Data Viualisation](./week1/index.html)", "[Grammar of Graphics](./week2/index.html)", "[Beyond Basics: Elevate Your Plots](./week3/index.html)", "[Visualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)](./week4/index.html)", "[Visualising Distributions](https://tstdataviz.netlify.app/slides/dis22#1)", "[Time series visualisation - part 1](./week5/index.html)", "[Feature-based time series visualisation](https://thiyangt.github.io/RLadiesMLTS/index.html#1)", "[Creating Interactive dashboards with R](https://thiyanga-statisticalconsultancy.netlify.app/slides/lecture2#1)", "[Spatial Visualisation](https://thiyanga-dataviz.netlify.app/slides/sp_viz#1)")
+reading <- c("[Gestalt Law in Photography](https://www.creative-photographer.com/how-to-use-gestalt-theory-for-better-composition/)", "[ggplot2: Elegant Graphics for Data Analysis (3e)](https://ggplot2-book.org/mastery)", "", "", "[The Data Visualisation Catalogue - Distributions](https://datavizcatalogue.com/search/distribution.html)", "[Chapter 2: Time Series Graphics](https://otexts.com/fpp3/graphics.html)", "[Calendar-based graphics]https://pkg.earo.me/sugrrants/articles/frame-calendar.html", "", "")
+exercise <- c("", "Perform an EDA on penguins dataset using ggplot2.", "Perform EDA on worldbank dataset.", "", "Visualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/", "denguedatahub::srilanka_weekly_data - visualise the data", "Visualising pedestrian counts in Melbourne city", "", "")
+assignments <- c("[Assignment 1](./week1/assignment1.html)", "None", "None", "None", "", "", "", "Assignment 2 - Part 1 visit Google Classroom", "Assignment 2 - Part 2 visit Google Classroom")
 df <- tibble(wkno, date, Topic, reading, exercise, assignments)
 colnames(df) <- c("Week No.", "Date", "Topic", "Reading", "Exercise", "Assignments"
                   )
@@ -44,10 +44,18 @@ df |> knitr::kable()
 library(sugrrants)
 data(hourly_peds)
 ```
+
 2.  Tickets issued for parking violations in the city of Philadelphia, Pennsylvania in 2017
 
-```r
+``` r
 library(tidyverse)
 
 philly <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-03/tickets.csv")
+```
+
+3.  Emission data
+
+``` r
+emissions <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-21/emissions.csv')
+emissions
 ```

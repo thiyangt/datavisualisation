@@ -2,37 +2,9 @@
   {
     "objectID": "week6/Flexdashboard1.html",
     "href": "week6/Flexdashboard1.html",
-    "title": "Penguins",
+    "title": "Parking violations in the city of Philadelphia, Pennsylvania in 2017",
     "section": "",
-    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\n\n\n\n\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\n\n\n\n\n\n\n\n\n\n\n\n\ng1 &lt;-ggplot(penguins, aes(x = sex, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\"),\n                    guide = FALSE) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip()\nggplotly(g1)\n\nWarning: The `guide` argument in `scale_*()` cannot be `FALSE`. This was deprecated in\nggplot2 3.3.4.\nℹ Please use \"none\" instead.\nℹ The deprecated feature was likely used in the base package.\n  Please report the issue to the authors.\n\n\n\n\n\n\n\n\n\n\ng1 &lt;- ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 2) +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))\nggplotly(g1)"
-  },
-  {
-    "objectID": "week6/Flexdashboard1.html#column",
-    "href": "week6/Flexdashboard1.html#column",
-    "title": "Penguins",
-    "section": "",
-    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\n\n\n\n\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout"
-  },
-  {
-    "objectID": "week6/Flexdashboard1.html#column-1",
-    "href": "week6/Flexdashboard1.html#column-1",
-    "title": "Penguins",
-    "section": "",
-    "text": "g1 &lt;-ggplot(penguins, aes(x = sex, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\"),\n                    guide = FALSE) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip()\nggplotly(g1)\n\nWarning: The `guide` argument in `scale_*()` cannot be `FALSE`. This was deprecated in\nggplot2 3.3.4.\nℹ Please use \"none\" instead.\nℹ The deprecated feature was likely used in the base package.\n  Please report the issue to the authors.\n\n\n\n\n\n\n\n\n\n\ng1 &lt;- ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 2) +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))\nggplotly(g1)"
-  },
-  {
-    "objectID": "week6/Flexdashboard1.html#column-2",
-    "href": "week6/Flexdashboard1.html#column-2",
-    "title": "Penguins",
-    "section": "Column",
-    "text": "Column\n\nChart 1\n\na1 &lt;- ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color=species)) +\n   geom_point() + geom_density_2d() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"The scatter plot of body mass index vs bill length\",\n       subtitle = \"Bill length and body mass for Adelie, Chinstrap and Gentoo Penguins\",\n       x = \"Bill length (mm)\",\n       y = \"Body mass (g)\",\n       color = \"Penguin species\")\nggplotly(a1)\n\n\n\n\n\n\n\nChart 2\n\na2 &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  #geom_density_2d() +\n  stat_density_2d(aes(fill = ..level..), geom = \"polygon\") +\n  scale_fill_viridis_c() +\n  geom_point(aes(color=species)) + \n scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"The scatter plot of body mass index vs flipper length\",\n       subtitle = \"Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins\",\n       x = \"Flipper length (mm)\",\n       y = \"Body mass (g)\",\n       color = \"Penguin species\") \nggplotly(a2)"
-  },
-  {
-    "objectID": "week6/Flexdashboard1.html#column-3",
-    "href": "week6/Flexdashboard1.html#column-3",
-    "title": "Penguins",
-    "section": "Column",
-    "text": "Column\n\nChart 3\n\na3 &lt;- ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +\n  geom_boxplot(aes(color = species), width = 0.3, show.legend = TRUE) +\n  geom_jitter(aes(color = species), alpha = 0.5, show.legend = FALSE, position = position_jitter(width = 0.2, seed = 0)) +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(x = \"Species\",\n       y = \"Bill length (mm)\",\n       title=\"Distribution of bill length by species\")\nggplotly(a3)\n\n\n\n\n\n\n\nChart 4\n\nlibrary(ggridges)\na4 &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = species)) +\n  geom_density_ridges(aes(fill = species)) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) + \n  labs(x = \"Flipper length (mm)\", title=\"Distribution of flipper length by species\")\na4"
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nphilly &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-03/tickets.csv\")\n\nRows: 1260891 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (2): violation_desc, issuing_agency\ndbl  (4): fine, lat, lon, zip_code\ndttm (1): issue_datetime\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\ndaily_totals &lt;- philly |&gt;\n  mutate(issue_date = as_date(issue_datetime)) |&gt;\n  group_by(issue_date) |&gt;\n  summarise(Tickets = n(),\n            Fines = sum(fine, na.rm = TRUE)) |&gt;\n  ungroup() |&gt;\n  mutate(wday = str_sub(weekdays(issue_date), 1, 3),\n         month_day = day(issue_date),\n         month = month(issue_date),\n         week_increment = ifelse(month_day == 1 | wday == \"Sun\", 1, 0)) |&gt;\n  group_by(month) |&gt; \n  mutate(week = cumsum(week_increment),\n         text_month = months(issue_date)) |&gt;\n  ungroup()\n\n## Setting factor levels \nwday_vec &lt;- c(\"Sun\", \"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\")\ndaily_totals$wday &lt;- factor(daily_totals$wday, levels = wday_vec)\nmonth_vec &lt;- c(\"January\", \"February\", \"March\", \"April\", \"May\", \"June\",\n               \"July\", \"August\", \"September\", \"October\", \"November\", \"December\") \ndaily_totals$text_month &lt;- factor(daily_totals$text_month, \n                                  levels =  month_vec)\n\nlibrary(scales) # to get the dollar values formatted\n\n\nAttaching package: 'scales'\n\n\nThe following object is masked from 'package:purrr':\n\n    discard\n\n\nThe following object is masked from 'package:readr':\n\n    col_factor\n\nlibrary(plotly)\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\ndaily_totals &lt;- daily_totals %&gt;% \n  mutate(fine_txt = paste0(\"$\",formatC(Fines, format=\"f\", big.mark=\",\", digits = 0)),\n                                        desc = paste(wday, text_month, month_day, 2017, \"\\n\", fine_txt))\n\n\nphilly_calendar &lt;- ggplot(daily_totals, \n                          aes(x = wday,y = week,\n                              text = desc)) + \n  geom_tile(aes(fill = Fines), colour = \"white\") +\n  facet_wrap(~text_month, scales = \"free\") + \n  scale_y_reverse() + \n  theme_minimal() + \n  scale_fill_viridis_c(labels = dollar) + \n  scale_x_discrete(position = \"top\") + \n  ylab(\"\") + xlab(\"\") + labs(fill = \"Fines Issued\") + \n  ggtitle(\"Philadelphia Parking Violations (2017)\") +\n  theme(panel.grid.major = element_blank(), \n        panel.grid.minor = element_blank(),\n        axis.text.y = element_blank(),\n        strip.text.x = element_text(\n          size = 12, color = \"black\", face = \"bold\"), \n        plot.title = element_text(size = 14, hjust = 0.5))\nphilly_calendar"
   },
   {
     "objectID": "week4/index.html",
@@ -189,6 +161,34 @@
     "text": "Due date:\n15 May 2024\nAssignment 1:\n10 marks\nTask:\n\nCapture a photograph demonstrating the application of Gestalt laws.\nExplain how the Gestalt principles were utilized in your photograph.\nYou can use any location to take your photograph.\nYou must document your work in an RMarkdown document. Your work should be fully reproducible. That means, you should submit your .Rmd file, .html file and any attachments. The best reports will be published on the course’s website.\n\nAcademic Integrity Notice:\nPlagiarism Policy: Reports found to be plagiarized will receive a score of 0 for the assignment."
   },
   {
+    "objectID": "flexdashboard_2_7_2024.html",
+    "href": "flexdashboard_2_7_2024.html",
+    "title": "Exploratory Data Analysis",
+    "section": "",
+    "text": "valueBox(dim(penguins)[1], caption=\"Number of observations\",\n         icon=\"fa-pencil\")\n\n344\n\n\n\n\n\n\nvalueBox(dim(penguins)[2], caption=\"Number of variables\")\n\n8\n\n\n\n\n\n\nvisdat::vis_dat(penguins)"
+  },
+  {
+    "objectID": "flexdashboard_2_7_2024.html#column",
+    "href": "flexdashboard_2_7_2024.html#column",
+    "title": "Exploratory Data Analysis",
+    "section": "",
+    "text": "valueBox(dim(penguins)[1], caption=\"Number of observations\",\n         icon=\"fa-pencil\")\n\n344\n\n\n\n\n\n\nvalueBox(dim(penguins)[2], caption=\"Number of variables\")\n\n8\n\n\n\n\n\n\nvisdat::vis_dat(penguins)"
+  },
+  {
+    "objectID": "flexdashboard_2_7_2024.html#column-2",
+    "href": "flexdashboard_2_7_2024.html#column-2",
+    "title": "Exploratory Data Analysis",
+    "section": "Column",
+    "text": "Column\n\n\n\ng1 &lt;- ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species,\n                 shape = species),\n             size = 2) +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))\nggplotly(g1)\n\n\n\n\n\n\n\n\n\na1 &lt;- ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color=species)) +\n   geom_point() + geom_density_2d() +\n  scale_color_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  labs(title = \"The scatter plot of body mass index vs bill length\",\n       subtitle = \"Bill length and body mass for Adelie, Chinstrap and Gentoo Penguins\",\n       x = \"Bill length (mm)\",\n       y = \"Body mass (g)\",\n       color = \"Penguin species\")\nggplotly(a1)"
+  },
+  {
+    "objectID": "flexdashboard_2_7_2024.html#column-3",
+    "href": "flexdashboard_2_7_2024.html#column-3",
+    "title": "Exploratory Data Analysis",
+    "section": "Column",
+    "text": "Column\n\n\n\nlibrary(ggridges)\na4 &lt;- ggplot(penguins, aes(x = flipper_length_mm, y = species)) +\n  geom_density_ridges(aes(fill = species)) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) + \n  labs(x = \"Flipper length (mm)\", title=\"Distribution of flipper length by species\")\na4"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -235,14 +235,14 @@
     "href": "index.html#weekly-schedule",
     "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
     "section": "Weekly Schedule:",
-    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3/4\nMay 21, 2024/ May 28, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone\n\n\n5\nJune 4, 2024\nVisualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)\n\n\nNone\n\n\n6\nJune 11, 2024\nVisualising Distributions\nThe Data Visualisation Catalogue - Distributions\nVisualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/\n\n\n\n7\nJune 18, 2024\nTime series visualisation - part 1\nChapter 2: Time Series Graphics\ndenguedatahub::srilanka_weekly_data - visualise the data\n\n\n\n8\nJune 25, 2024\nFeature-based time series visualisation\n[Calendar-based graphics]https://pkg.earo.me/sugrrants/articles/frame-calendar.html\nVisualising pedestrian counts in Melbourne city\n\n\n\n9\nJuly 2, 2024\nCreating dynamic dashboards with R"
+    "text": "Weekly Schedule:\n\n\n\n\n\nWeek No.\nDate\nTopic\nReading\nExercise\nAssignments\n\n\n\n\n1\nApril 30, 2024\nIntroduction to Data Viualisation\nGestalt Law in Photography\n\nAssignment 1\n\n\n2\nMay 14, 2024\nGrammar of Graphics\nggplot2: Elegant Graphics for Data Analysis (3e)\nPerform an EDA on penguins dataset using ggplot2.\nNone\n\n\n3/4\nMay 21, 2024/ May 28, 2024\nBeyond Basics: Elevate Your Plots\n\nPerform EDA on worldbank dataset.\nNone\n\n\n5\nJune 4, 2024\nVisualising Qualitative Variables (on their own, with another qualitative variable, with quantitative variables)\n\n\nNone\n\n\n6\nJune 11, 2024\nVisualising Distributions\nThe Data Visualisation Catalogue - Distributions\nVisualize the distribution of dengue in 25 districts in Sri Lanka. Data available at: https://denguedatahub.netlify.app/\n\n\n\n7\nJune 18, 2024\nTime series visualisation - part 1\nChapter 2: Time Series Graphics\ndenguedatahub::srilanka_weekly_data - visualise the data\n\n\n\n8\nJune 25, 2024\nFeature-based time series visualisation\n[Calendar-based graphics]https://pkg.earo.me/sugrrants/articles/frame-calendar.html\nVisualising pedestrian counts in Melbourne city\n\n\n\n9\nJuly 2, 2024\nCreating Interactive dashboards with R\n\n\nAssignment 2 - Part 1 visit Google Classroom\n\n\n10\nJuly 9, 2024\nSpatial Visualisation\n\n\nAssignment 2 - Part 2 visit Google Classroom"
   },
   {
     "objectID": "index.html#datasets",
     "href": "index.html#datasets",
     "title": "STA 492 2.0/ ASP 460 2.0 Data Visualisation",
     "section": "Datasets",
-    "text": "Datasets\n\nPedestrian counts in Melbourne city\n\nlibrary(sugrrants)\ndata(hourly_peds)\n\nTickets issued for parking violations in the city of Philadelphia, Pennsylvania in 2017\n\nlibrary(tidyverse)\n\nphilly &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-03/tickets.csv\")"
+    "text": "Datasets\n\nPedestrian counts in Melbourne city\n\nlibrary(sugrrants)\ndata(hourly_peds)\n\nTickets issued for parking violations in the city of Philadelphia, Pennsylvania in 2017\n\nlibrary(tidyverse)\n\nphilly &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-03/tickets.csv\")\n\nEmission data\n\nemissions &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-21/emissions.csv')\nemissions"
   },
   {
     "objectID": "week1/index.html#perceiving",
