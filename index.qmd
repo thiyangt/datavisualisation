@@ -59,3 +59,10 @@ philly <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesda
 emissions <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-21/emissions.csv')
 emissions
 ```
+
+4 ToothGrowth
+
+```r
+ToothGrowth
+```
+Take a suitable visualization to illustrate the relationship between supp, dose, and the mean tooth growth
