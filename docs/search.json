@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "week2/index.html#packages-we-need-today",
+    "href": "week2/index.html#packages-we-need-today",
+    "title": "The Grammar of Graphics",
+    "section": "Packages we need today",
+    "text": "Packages we need today\n\nlibrary(ggplot2)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "week2/index.html#pioneers",
+    "href": "week2/index.html#pioneers",
+    "title": "The Grammar of Graphics",
+    "section": "Pioneers",
+    "text": "Pioneers\n\n\nConcept: Leland Wilkinson\n\n\nImplementation: Hadley Wickham"
+  },
+  {
+    "objectID": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
+    "href": "week2/index.html#building-blocks-of-layers-with-the-grammar-of-graphics",
+    "title": "The Grammar of Graphics",
+    "section": "Building Blocks of layers with the grammar of graphics",
+    "text": "Building Blocks of layers with the grammar of graphics\n\nData\nAesthetics\nGeometrics\nFacets\nScales\nStatistics\nCoordinates\nThemes"
+  },
+  {
+    "objectID": "week2/index.html#step-1-take-data",
+    "href": "week2/index.html#step-1-take-data",
+    "title": "The Grammar of Graphics",
+    "section": "Step 1: Take Data",
+    "text": "Step 1: Take Data\n\ndata(penguins)"
+  },
+  {
+    "objectID": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
+    "href": "week2/index.html#step-2-take-a-canvas-to-do-the-plot",
+    "title": "The Grammar of Graphics",
+    "section": "Step 2: Take a canvas to do the plot",
+    "text": "Step 2: Take a canvas to do the plot\n\nggplot()"
+  },
+  {
+    "objectID": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
+    "href": "week2/index.html#take-your-data-onto-your-canvas-for-plotting",
+    "title": "The Grammar of Graphics",
+    "section": "Take your data onto your canvas for plotting",
+    "text": "Take your data onto your canvas for plotting\n\nggplot(data=penguins)"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics",
+    "href": "week2/index.html#data-aesthetics",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics",
+    "text": "Data + Aesthetics"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom",
+    "href": "week2/index.html#data-aesthetics-geom",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom",
+    "text": "Data + Aesthetics + Geom\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point()"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet",
+    "href": "week2/index.html#data-aesthetics-geom-facet",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet",
+    "text": "Data + Aesthetics + Geom + Facet\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_wrap(~species)"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet-scale",
+    "href": "week2/index.html#data-aesthetics-geom-facet-scale",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet + Scale",
+    "text": "Data + Aesthetics + Geom + Facet + Scale\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) + \nscale_colour_manual(values = c(\"#1b9e77\",\"#d95f02\",\"#7570b3\"))"
+  },
+  {
+    "objectID": "week2/index.html#data-aesthetics-geom-facet-stat",
+    "href": "week2/index.html#data-aesthetics-geom-facet-stat",
+    "title": "The Grammar of Graphics",
+    "section": "Data + Aesthetics + Geom + Facet + Stat",
+    "text": "Data + Aesthetics + Geom + Facet + Stat\n\nggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, col= species)) +\ngeom_point() + \nfacet_grid(species ~ island) +\nscale_color_brewer(palette = \"Dark2\") +\nstat_summary(\n    geom = \"point\",\n    fun.y = \"mean\",\n    col = \"black\",\n    size = 7,\n    shape = 24,\n    fill = \"red\",\n    alpha = 0.5,\n  )"
+  }
+]
